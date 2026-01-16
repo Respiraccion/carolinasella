@@ -1,0 +1,300 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/theme.json",
+    "version": 3,
+    "settings": {
+        "color": {
+            "palette": [
+                {
+                    "color": "#E8E8E4",
+                    "name": "Fondo Principal",
+                    "slug": "base"
+                },
+                {
+                    "color": "#F1F1EF",
+                    "name": "Gris Muy Claro Cálido",
+                    "slug": "gris-muy-claro"
+                },
+                {
+                    "color": "#D8D6D2",
+                    "name": "Gris Niebla",
+                    "slug": "gris-niebla"
+                },
+                {
+                    "color": "#3A3A3A",
+                    "name": "Grafito",
+                    "slug": "grafito"
+                },
+                {
+                    "color": "#5F6C73",
+                    "name": "Azul Humo",
+                    "slug": "azul-humo"
+                },
+                {
+                    "color": "#A59BB3",
+                    "name": "Violeta Polvo",
+                    "slug": "violeta-polvo"
+                },
+                {
+                    "color": "#FFFFFF",
+                    "name": "Blanco",
+                    "slug": "white"
+                },
+                {
+                    "color": "#E5D5D5",
+                    "name": "Bordó Claro",
+                    "slug": "bordo-claro"
+                }
+            ]
+        },
+        "typography": {
+            "fontFamilies": [
+                {
+                    "fontFamily": "'Bodoni Moda', serif",
+                    "name": "Bodoni Moda",
+                    "slug": "bodoni-moda",
+                    "fontFace": [
+                        {
+                            "fontFamily": "Bodoni Moda",
+                            "fontWeight": "400 900",
+                            "fontStyle": "normal",
+                            "src": [
+                                "https://fonts.gstatic.com/s/bodonimoda/v25/aFTU7PNzY382FjmfwXqK7BQkUG5x6A.woff2"
+                            ]
+                        },
+                        {
+                            "fontFamily": "Bodoni Moda",
+                            "fontWeight": "400 900",
+                            "fontStyle": "italic",
+                            "src": [
+                                "https://fonts.gstatic.com/s/bodonimoda/v25/aFTW7PNzY382FjmfwXqK7H4av6Dlc5DV.woff2"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "fontFamily": "'Cormorant Garamond', serif",
+                    "name": "Cormorant Garamond",
+                    "slug": "cormorant-garamond",
+                    "fontFace": [
+                        {
+                            "fontFamily": "Cormorant Garamond",
+                            "fontWeight": "300",
+                            "fontStyle": "normal",
+                            "src": [
+                                "https://fonts.gstatic.com/s/cormorantgaramond/v16/co3YmX5slCNuHLi8bLeY9MK7whWMhyjYrEtFmSqn.woff2"
+                            ]
+                        },
+                        {
+                            "fontFamily": "Cormorant Garamond",
+                            "fontWeight": "400",
+                            "fontStyle": "normal",
+                            "src": [
+                                "https://fonts.gstatic.com/s/cormorantgaramond/v16/co3bmX5slCNuHLi8bLeY9MK7whWMhyjQAll5vg.woff2"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "fontFamily": "'Lato', sans-serif",
+                    "name": "Lato",
+                    "slug": "lato",
+                    "fontFace": [
+                        {
+                            "fontFamily": "Lato",
+                            "fontWeight": "300",
+                            "fontStyle": "normal",
+                            "src": [
+                                "https://fonts.gstatic.com/s/lato/v24/S6u9w4BMUTPHh7USSwiPGQ.woff2"
+                            ]
+                        },
+                        {
+                            "fontFamily": "Lato",
+                            "fontWeight": "400",
+                            "fontStyle": "normal",
+                            "src": [
+                                "https://fonts.gstatic.com/s/lato/v24/S6uyw4BMUTPHjx4wXg.woff2"
+                            ]
+                        },
+                        {
+                            "fontFamily": "Lato",
+                            "fontWeight": "700",
+                            "fontStyle": "normal",
+                            "src": [
+                                "https://fonts.gstatic.com/s/lato/v24/S6u9w4BMUTPHh6UVSwiPGQ.woff2"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "fontFamily": "'EB Garamond', serif",
+                    "name": "EB Garamond",
+                    "slug": "eb-garamond",
+                    "fontFace": [
+                        {
+                            "fontFamily": "EB Garamond",
+                            "fontWeight": "400 800",
+                            "fontStyle": "normal",
+                            "src": [
+                                "https://fonts.gstatic.com/s/ebgaramond/v27/SlGDmQSNjdsmc35JDF1K5E55YMjF_7DPuGi-2fA.woff2"
+                            ]
+                        },
+                        {
+                            "fontFamily": "EB Garamond",
+                            "fontWeight": "400 800",
+                            "fontStyle": "italic",
+                            "src": [
+                                "https://fonts.gstatic.com/s/ebgaramond/v27/SlGFmQSNjdsmc35JDF1K5GRwUjcdlttVFmC7.woff2"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "spacing": {
+            "blockGap": true,
+            "padding": true,
+            "margin": true
+        }
+    },
+    "styles": {
+        "spacing": {
+            "blockGap": "0",
+            "padding": {
+                "top": "0",
+                "bottom": "0"
+            },
+            "margin": {
+                "top": "0",
+                "bottom": "0"
+            }
+        },
+        "color": {
+            "background": "var(--wp--preset--color--base)",
+            "text": "var(--wp--preset--color--grafito)"
+        },
+        "typography": {
+            "fontFamily": "var(--wp--preset--font-family--lato)",
+            "fontSize": "1.125rem",
+            "lineHeight": "1.8"
+        },
+        "elements": {
+            "heading": {
+                "typography": {
+                    "fontFamily": "var(--wp--preset--font-family--cormorant-garamond)",
+                    "fontWeight": "400",
+                    "lineHeight": "1.2"
+                },
+                "color": {
+                    "text": "var(--wp--preset--color--grafito)"
+                }
+            },
+            "h1": {
+                "typography": {
+                    "fontSize": "clamp(2.5rem, 5vw, 4rem)",
+                    "letterSpacing": "-0.02em"
+                }
+            },
+            "h2": {
+                "typography": {
+                    "fontSize": "clamp(1.8rem, 3vw, 2.5rem)",
+                    "fontWeight": "300"
+                }
+            },
+            "h3": {
+                "typography": {
+                    "fontSize": "clamp(1.4rem, 2.5vw, 1.8rem)",
+                    "fontWeight": "400"
+                }
+            },
+            "link": {
+                "color": {
+                    "text": "var(--wp--preset--color--azul-humo)"
+                },
+                "typography": {
+                    "textDecoration": "none"
+                },
+                ":hover": {
+                    "color": {
+                        "text": "var(--wp--preset--color--violeta-polvo)"
+                    },
+                    "typography": {
+                        "textDecoration": "underline"
+                    }
+                }
+            },
+            "button": {
+                "color": {
+                    "background": "var(--wp--preset--color--grafito)",
+                    "text": "var(--wp--preset--color--gris-muy-claro)"
+                },
+                "typography": {
+                    "fontFamily": "var(--wp--preset--font-family--lato)",
+                    "fontSize": "0.9rem",
+                    "letterSpacing": "0.1em",
+                    "textTransform": "uppercase"
+                },
+                "border": {
+                    "radius": "0"
+                },
+                ":hover": {
+                    "color": {
+                        "background": "var(--wp--preset--color--violeta-polvo)",
+                        "text": "var(--wp--preset--color--gris-muy-claro)"
+                    }
+                }
+            }
+        },
+        "blocks": {
+            "core/site-title": {
+                "typography": {
+                    "fontFamily": "var(--wp--preset--font-family--bodoni-moda)",
+                    "fontSize": "clamp(1.5rem, 3vw, 2rem)",
+                    "fontWeight": "400",
+                    "letterSpacing": "0.05em",
+                    "textTransform": "uppercase"
+                },
+                "elements": {
+                    "link": {
+                        "color": {
+                            "text": "var(--wp--preset--color--grafito)"
+                        },
+                        "typography": {
+                            "textDecoration": "none"
+                        },
+                        ":hover": {
+                            "color": {
+                                "text": "var(--wp--preset--color--grafito)"
+                            },
+                            "typography": {
+                                "textDecoration": "none"
+                            }
+                        }
+                    }
+                }
+            },
+            "core/paragraph": {
+                "typography": {
+                    "lineHeight": "1.8"
+                }
+            },
+            "core/quote": {
+                "typography": {
+                    "fontFamily": "var(--wp--preset--font-family--eb-garamond)",
+                    "fontStyle": "italic",
+                    "fontSize": "1.25rem"
+                },
+                "color": {
+                    "text": "var(--wp--preset--color--azul-humo)"
+                }
+            },
+            "core/navigation": {
+                "typography": {
+                    "fontFamily": "var(--wp--preset--font-family--lato)",
+                    "fontSize": "0.875rem",
+                    "letterSpacing": "0.15em",
+                    "textTransform": "none"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,13 @@
+
+# WordPress default gitignore
+wp-config.php
+wp-content/uploads/
+wp-content/cache/
+wp-content/backups/
+wp-content/debug.log
+.htaccess
+*.sql
+*.log
+.DS_Store
+node_modules/
+.env
