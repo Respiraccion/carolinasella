@@ -1,50 +1,54 @@
 # 02 - HUMAN (Tasks & Feedback)
 
-This file tracks tasks that require human action and provides guidance on how to manage the site.
+This file tracks tasks that require human action (sensitive data, content decisions, UI usage).
 
 ---
 
-## 🎨 STYLING PRIORITY (Read carefully)
+## 🚀 NEW PRIORITY TASKS (From Feedback)
 
-The site uses the **Twenty Twenty-Five** block theme. To ensure you maintain control over the design, we follow this priority:
+### 1. Home Image Adjustment (WordPress Editor)
+- **Task**: The second image on Home is currently a circle. Change it to a **Rectangle**.
+- **How**: 
+  - Click the image block.
+  - In Settings (right panel), look for **Styles**.
+  - Uncheck "Rounded" or select "Default".
 
-1.  **Site Editor (Recommended)**:
-    -   Go to **Appearance** → **Editor** → **Styles**.
-    -   Use this for colors, typography, and general layout.
-    -   *Why?* This keeps the site easy for you to edit without touching code.
-2.  **Child Theme (`style.css`)**:
-    -   We only use this for things the Editor can't do (like complex animations or very specific mobile fixes).
-    -   **Current Status**: Some CSS has been added to hide the user icon and fix the hero section.
+### 2. Shop Categories & Filters
+- **Task**: Create/Assign detailed categories for products.
+- **Why**: "I want filters: All, Prints, Decorative Objects, Giclee, Originals".
+- **How**: 
+  - Go to **Products > Categories**.
+  - Create these categories.
+  - Assign your products to them.
+
+### 3. Menu Reorganization (Site Editor)
+- **Task**: Fix the menu order.
+- **Requirement**: "Shop" should be **before** "Blog" and **after** "Oracle Cards".
+- **Requirement**: "Ink & Ritual" -> Remove sub-items dropdown. Only show the list of specialized pages ("Artistic Tattoos", "Tattoo Ritual") ON the page itself, or simplify the menu link.
+
+### 4. Artistic Tattoos Content
+- **Task**: Rename title to **"Artistic Tattoos by Nebula"**.
+- **Content**: Link to Instagram `nebula.ttt` with text "Ver más".
+- **Gallery**: Upload the photos for the gallery (Agent will handle the B&W effect).
+
+### 5. Art Gallery Content
+- **Task**: Upload paintings.
+- **Text**: Add note to each: "Original not for sale yet. Giclee copies available. Join newsletter for updates."
+- **Newsletter**: Add the Newsletter subscription form block.
+
+### 6. Contact Form Setup
+- **Task**: Create the Contact Form.
+- **Fields Needed**:
+  - Name
+  - Email
+  - Reason (Dropdown: Tattoos, Art, Other)
+  - Message Text
+- **Note**: Use a plugin like **WPForms** or **Contact Form 7** if the default block isn't enough.
+
+### 7. Background Colors
+- **Task**: Review site background colors in the Editor. Adjust if they feel off.
 
 ---
 
-## 📋 PENDING HUMAN TASKS
-
-### 1. SSH Access (Windows)
-- Follow the instructions in `DOCS/ssh_windows_setup.txt` to set up your direct connection to the server.
-
-### 2. Verify Hero Section (Homepage)
-- Please check the homepage. I've performed deep fixes to make the Hero text and image visible.
-- **Question for User**: Does the hero text look correctly aligned to you now, or would you like me to adjust it further via the Site Editor?
-
-### 4. Shop Architecture Verification
-- I have updated the site structure in `AGENTS.md` to match the actual pages on your server (Cart, Checkout, Oracle Cards, etc.).
-- **Action**: Please verify if the products you expect (like the "Poster") are appearing in the Shop page correctly.
-- **Action**: Ensure the "My Account" page is hidden from the public if you don't want customers to access it yet (as we discussed in previous sessions).
-
----
-
-## 🛠️ MANUAL INSTRUCTIONS
-
-### Step 1: Remove "Account" Block from Header
-1. Go to **Appearance** → **Editor**.
-2. Click **Patterns** → **Header**.
-3. Look for a small "User" or "Account" block on the right side.
-4. Click the three dots and select **Delete**.
-5. **Save** everything.
-
----
-
-## 💬 QUESTIONS FOR YOU (Carolina/User)
-- **Styling**: Do you prefer doing most styling yourself through the WordPress Editor, or do you want me to handle specific CSS files directly? I recommend the Editor so you are not dependent on an agent for small changes like colors or fonts.
-- **Plugins**: Are there any new plugins you've installed that I should be aware of for the setup?
+## 📝 NOTES FOR AGENT
+*Write here any feedback or new requests...*

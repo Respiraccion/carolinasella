@@ -4,6 +4,32 @@
  Version:      1.3
 */
 
+/* ════════════════════════════════════════════════════════════════════════════
+   📋 ÍNDICE DE CONTENIDOS (Table of Contents)
+   
+   ⚠️ IMPORTANTE: Este archivo solo debe ser editado por el AGENTE.
+   Para cambios de estilo, usa primero WordPress → Apariencia → Editor.
+   
+   SECCIONES:
+   ──────────────────────────────────────────────────────────────────────────
+   1. FUENTES (@font-face)............................ ~Línea 30
+   2. HEADER (Logo, menú, navegación)................ ~Línea 50
+   3. HERO SECTION (Imagen principal)................ ~Línea 315
+   4. PROFILE CIRCLE (Foto de perfil)................ ~Línea 360
+   5. IMÁGENES (Configuración general)............... ~Línea 410
+   6. NAVEGACIÓN/SUBMENÚS ........................... ~Línea 435
+   7. ESPACIADO Y MÁRGENES GLOBALES.................. ~Línea 462
+   8. RESPONSIVE - MÓVILES (<480px).................. ~Línea 595
+   9. RESPONSIVE - MÓVILES MEDIANOS (480-767px)...... ~Línea 700
+   10. RESPONSIVE - TABLETS (768-1024px)............. ~Línea 740
+   11. REGLAS COMUNES PANTALLAS PEQUEÑAS............. ~Línea 785
+   ──────────────────────────────────────────────────────────────────────────
+   
+   🔧 CÓMO MODIFICAR:
+   - Buscar (Ctrl+F) por el número de línea o nombre de sección
+   - Las VARIABLES CONFIGURABLES están en :root (~línea 570)
+   ════════════════════════════════════════════════════════════════════════════ */
+
 /* Import Cronde font */
 @font-face {
     font-family: 'Cronde';
