@@ -154,7 +154,8 @@
             "blockGap": true,
             "padding": true,
             "margin": true
-        }
+        },
+        "appearanceTools": true
     },
     "styles": {
         "spacing": {

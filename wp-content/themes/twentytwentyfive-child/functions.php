@@ -24,3 +24,64 @@ function twentytwentyfive_child_google_fonts()
         rel="stylesheet">
     <?php
 }
+
+/**
+ * Hide Admin Bar for Subscribers (WooCommerce Customers).
+ */
+add_action('after_setup_theme', 'carolina_remove_admin_bar');
+function carolina_remove_admin_bar() {
+    if (!current_user_can('edit_posts')) {
+        show_admin_bar(false);
+    }
+}
+
+/**
+ * Redirect My Account to Home for non-admins.
+ */
+add_action( 'template_redirect', 'carolina_redirect_my_account' );
+function carolina_redirect_my_account() {
+    if ( function_exists('is_account_page') && is_account_page() && ! current_user_can( 'edit_posts' ) ) {
+        wp_redirect( home_url() );
+        exit;
+    }
+}
+
+/**
+ * Remove WooCommerce account menu items from navigation.
+ */
+add_filter( 'woocommerce_account_menu_items', '__return_empty_array', 999 );
+
+/**
+ * Disable WooCommerce customer account creation.
+ */
+add_filter( 'woocommerce_enable_guest_checkout', '__return_true' );
+add_filter( 'woocommerce_enable_signup_and_login_from_checkout', '__return_false' );
+
+/**
+ * Remove the account icon/link from WooCommerce navigation blocks.
+ */
+add_action( 'wp_footer', 'carolina_hide_account_icon_script' );
+function carolina_hide_account_icon_script() {
+    ?>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Remove any elements with user/account icons
+        const selectors = [
+            'a[href*="my-account"]',
+            '.wc-block-components-account-link',
+            'svg.user-icon',
+            '.header-section-right a[href*="account"]'
+        ];
+        
+        selectors.forEach(selector => {
+            const elements = document.querySelectorAll(selector);
+            elements.forEach(el => {
+                el.style.display = 'none';
+                el.remove();
+            });
+        });
+    });
+    </script>
+    <?php
+}
+

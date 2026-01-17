@@ -1,0 +1,497 @@
+/*
+ Theme Name:   Twenty Twenty-Five Child
+ Template:     twentytwentyfive
+ Version:      1.1
+*/
+
+/* Import Cronde font */
+@font-face {
+    font-family: 'Cronde';
+    src: url('fonts/CRONDERegular.woff2') format('woff2'),
+        url('fonts/CRONDERegular.woff') format('woff'),
+        url('fonts/CRONDERegular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cronde';
+    src: url('fonts/CRONDEItalic.woff2') format('woff2'),
+        url('fonts/CRONDEItalic.woff') format('woff'),
+        url('fonts/CRONDEItalic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* CRITICAL: Remove gap between header and content */
+body,
+body.wp-site-blocks,
+.wp-site-blocks,
+.wp-site-blocks>*,
+.wp-block-template-part,
+.has-violeta-polvo-background-color,
+header,
+main {
+    margin: 0 !important;
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.wp-block-cover,
+.wp-block-cover.hero-section,
+.alignfull {
+    margin-top: 0 !important;
+    margin-block-start: 0 !important;
+}
+
+/* Header with violet background - RESTORED SIZE & CENTERED TEXT */
+.has-violeta-polvo-background-color {
+    background-color: #A59BB3 !important;
+    padding: 20px 40px !important;
+    /* Restored larger padding */
+    min-height: auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+
+    /* Strict Top Sticky */
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1000 !important;
+    width: 100% !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+/* Reset body padding */
+body>.wp-site-blocks {
+    padding-top: 0 !important;
+}
+
+.custom-header-bar {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    position: relative !important;
+    height: 100% !important;
+}
+
+/* Ensure left and right sections stay put */
+/* Ensure left and right sections stay put and fill height */
+.header-section-left {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    z-index: 2 !important;
+    flex: 1 !important;
+    height: 100% !important;
+    min-height: 100% !important;
+}
+
+.header-section-right {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    z-index: 2 !important;
+    flex: 1 !important;
+    height: 100% !important;
+    min-height: 100% !important;
+}
+
+/* ABSOLUTE CENTER for Site Title - STRICT */
+.header-section-center {
+    position: absolute !important;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    z-index: 1 !important;
+    width: auto !important;
+    display: flex !important;
+    justify-content: center !important;
+    white-space: nowrap !important;
+    pointer-events: none;
+    /* Let clicks pass through if overlapping invisible areas */
+}
+
+/* Enable pointer events on the link itself */
+.header-section-center a {
+    pointer-events: auto !important;
+}
+
+/* Site Title styling */
+.elegant-site-title,
+.wp-block-site-title {
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.elegant-site-title a,
+.wp-block-site-title a {
+    font-family: 'Cronde', serif !important;
+    font-weight: 400 !important;
+    letter-spacing: 0.15em !important;
+    text-transform: capitalize !important;
+    font-size: clamp(1.7rem, 3.5vw, 2.2rem) !important;
+    color: #3A3A3A !important;
+    line-height: 1 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: inline-block !important;
+    text-decoration: none !important;
+}
+
+/* Force centering for Navigation menu button */
+.custom-nav-menu,
+.wp-block-navigation {
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    height: 100% !important;
+    min-height: 100% !important;
+    /* Ensure hamburger stays left */
+}
+
+.wp-block-navigation__responsive-container-open {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    /* Strict dimensions */
+    width: 40px !important;
+    height: 40px !important;
+    min-height: 40px !important;
+    max-height: 40px !important;
+
+    /* Remove any margin/padding that could shift it */
+    padding: 0 !important;
+    margin: 0 !important;
+
+    /* Enforce vertical centering */
+    position: relative !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    transform: none !important;
+
+    /* Flex self alignment - vertically center in parent */
+    align-self: center !important;
+    margin-top: auto !important;
+    margin-bottom: auto !important;
+
+    background: transparent !important;
+    border: none !important;
+}
+
+.wp-block-navigation__responsive-container-open svg {
+    width: 40px !important;
+    /* Larger hamburger */
+    height: 40px !important;
+    fill: #3A3A3A;
+    display: block !important;
+}
+
+/* Navigation overlay styling - Right side */
+.custom-nav-menu .wp-block-navigation__responsive-container.is-menu-open,
+.wp-block-navigation__responsive-container.is-menu-open {
+    padding: 30px 40px !important;
+    padding-right: 60px !important;
+    max-width: fit-content !important;
+    width: auto !important;
+    min-width: 280px !important;
+    height: 100vh !important;
+    background-color: #3A3A3A !important;
+    color: #A59BB3 !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    /* Left aligned overlay */
+    bottom: 0 !important;
+    z-index: 2000 !important;
+    overflow-y: auto !important;
+    /* Allow scrolling if menu is long */
+}
+
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content {
+    padding-top: 50px !important;
+    padding-bottom: 20px !important;
+    gap: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+    width: 100% !important;
+}
+
+/* Menu Items */
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item {
+    width: 100% !important;
+    display: block !important;
+    text-align: left !important;
+    margin-bottom: 15px !important;
+    position: relative !important;
+}
+
+/* SUBMENU: ACCORDION STYLE (Push items down) */
+.wp-block-navigation__submenu-container {
+    padding: 10px 0 10px 20px !important;
+    /* Indent content */
+    position: relative !important;
+    /* NOT absolute */
+    top: auto !important;
+    left: auto !important;
+    width: 100% !important;
+    background-color: transparent !important;
+    /* Seamless background */
+    margin: 0 !important;
+    z-index: auto !important;
+    border-radius: 0;
+    box-shadow: none !important;
+    display: none !important;
+    border-left: 1px solid #5a5a5a !important;
+    /* Guide line */
+}
+
+/* Submenu items */
+.wp-block-navigation__submenu-container .wp-block-navigation-item {
+    margin-bottom: 8px !important;
+    padding: 0 !important;
+}
+
+.wp-block-navigation__submenu-container .wp-block-navigation-item a {
+    font-size: 1.1rem !important;
+    color: #8c8c8c !important;
+    /* Slightly dimmer for hierarchy */
+    display: block !important;
+}
+
+.wp-block-navigation__submenu-container .wp-block-navigation-item a:hover {
+    color: #ffffff !important;
+}
+
+/* Show submenu on hover/focus */
+.wp-block-navigation-item.has-child:hover>.wp-block-navigation__submenu-container,
+.wp-block-navigation-item.has-child.is-open>.wp-block-navigation__submenu-container {
+    display: block !important;
+}
+
+/* Close button positioning */
+.wp-block-navigation__responsive-container-close {
+    position: absolute !important;
+    top: 20px !important;
+    right: 20px !important;
+    margin: 0 !important;
+}
+
+.wp-block-navigation__responsive-container-close svg {
+    fill: #A59BB3 !important;
+    width: 20px;
+    height: 20px;
+}
+
+/* Main Link Styles */
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item>a {
+    font-size: 1.3rem !important;
+    color: #A59BB3 !important;
+    text-transform: capitalize !important;
+    display: block !important;
+    width: 100% !important;
+}
+
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item>a:hover {
+    color: #ffffff !important;
+}
+
+/* Hero section for homepage - no spacing */
+.hero-section {
+    position: relative;
+    width: 100%;
+    min-height: 70vh;
+    overflow: visible;
+    margin: 0 !important;
+}
+
+.hero-section img {
+    width: 100%;
+    height: 70vh;
+    object-fit: cover;
+}
+
+/* Overlapping profile circle - bigger size */
+.profile-circle-container {
+    position: relative;
+    margin-top: -120px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-circle-container img {
+    width: 220px !important;
+    height: 220px !important;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px solid #E8E8E4;
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Larger body text */
+body {
+    font-size: 1.125rem;
+}
+
+/* Better paragraph spacing */
+.wp-block-paragraph {
+    line-height: 1.8;
+}
+
+/* Hide auto-generated page titles */
+.entry-title,
+.wp-block-post-title {
+    display: none;
+}
+
+/* Make profile picture bigger */
+.profile-pic img,
+.profile-circle-container img {
+    width: 280px !important;
+    height: 280px !important;
+}
+
+.profile-circle-container {
+    margin-top: -140px;
+}
+
+/* Hide submenu items by default in navigation */
+.wp-block-navigation__submenu-container,
+.wp-block-navigation .wp-block-navigation__submenu-container {
+    display: none !important;
+}
+
+/* Show submenu when parent is clicked/hovered */
+.wp-block-navigation-item.has-child:hover .wp-block-navigation__submenu-container,
+.wp-block-navigation-item.has-child.is-open .wp-block-navigation__submenu-container,
+.wp-block-navigation-item.has-child .wp-block-navigation__submenu-container.is-open {
+    display: block !important;
+}
+
+/* Add arrow indicator for items with submenus */
+.wp-block-navigation-item.has-child>a::after {
+    content: " ›";
+    margin-left: 0.5em;
+}
+
+
+/* Style submenu items */
+.wp-block-navigation__submenu-container .wp-block-navigation-item {
+    padding-left: 1.5rem;
+    font-size: 1.2rem;
+}
+
+/* NUCLEAR OPTION: Kill ALL gaps between header and content */
+* {
+    margin-block-start: 0 !important;
+    margin-block-end: 0 !important;
+}
+
+.wp-site-blocks>*+* {
+    margin-block-start: 0 !important;
+}
+
+/* Force header group to have no bottom margin */
+.has-violeta-polvo-background-color.wp-block-group {
+    margin-bottom: 0 !important;
+    padding-bottom: var(--wp--preset--spacing--40, 40px) !important;
+}
+
+/* Force next element after header to have no top margin */
+.has-violeta-polvo-background-color+* {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* Kill WordPress default block spacing */
+.wp-block-group.alignfull+.wp-block-group.alignfull {
+    margin-top: 0 !important;
+}
+
+/* Target the specific template structure */
+body>.wp-site-blocks>* {
+    margin: 0 !important;
+}
+
+/* HIDE the post title that's creating the gap */
+.wp-block-post-title,
+h1.wp-block-post-title {
+    display: none !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Kill the entry-content padding that creates gap */
+.entry-content.alignfull.wp-block-post-content {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
+
+/* Make profile circle overlap hero image MORE */
+.profile-circle-container {
+    margin-top: -160px !important;
+}
+
+/* Kill the main element margin that creates the gap */
+main,
+main.wp-block-group {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* Kill all wrapper padding/margin */
+.wp-block-group.has-global-padding {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
+
+.entry-content.wp-block-post-content {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
+
+/* Target the specific first wrapper after header */
+main>.wp-block-group:first-child {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
+
+/* FORCE profile circle to overlap hero image */
+.profile-circle-container.wp-block-group {
+    margin-top: -160px !important;
+    position: relative !important;
+    z-index: 100 !important;
+    background: transparent !important;
+}
+
+/* Remove padding from profile container wrapper */
+.profile-circle-container.has-global-padding {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+/* Ensure hero section allows overlap */
+.hero-section.wp-block-cover {
+    margin-bottom: 0 !important;
+    position: relative !important;
+    z-index: 1 !important;
+}
