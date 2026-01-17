@@ -85,3 +85,8 @@ function carolina_hide_account_icon_script() {
     <?php
 }
 
+
+/**
+ * Image Optimization
+ */
+require_once get_stylesheet_directory() . '/inc/image-optimization.php';
