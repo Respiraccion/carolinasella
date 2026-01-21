@@ -51,102 +51,22 @@
                 {
                     "fontFamily": "'Bodoni Moda', serif",
                     "name": "Bodoni Moda",
-                    "slug": "bodoni-moda",
-                    "fontFace": [
-                        {
-                            "fontFamily": "Bodoni Moda",
-                            "fontWeight": "400 900",
-                            "fontStyle": "normal",
-                            "src": [
-                                "https://fonts.gstatic.com/s/bodonimoda/v25/aFTU7PNzY382FjmfwXqK7BQkUG5x6A.woff2"
-                            ]
-                        },
-                        {
-                            "fontFamily": "Bodoni Moda",
-                            "fontWeight": "400 900",
-                            "fontStyle": "italic",
-                            "src": [
-                                "https://fonts.gstatic.com/s/bodonimoda/v25/aFTW7PNzY382FjmfwXqK7H4av6Dlc5DV.woff2"
-                            ]
-                        }
-                    ]
+                    "slug": "bodoni-moda"
                 },
                 {
                     "fontFamily": "'Cormorant Garamond', serif",
                     "name": "Cormorant Garamond",
-                    "slug": "cormorant-garamond",
-                    "fontFace": [
-                        {
-                            "fontFamily": "Cormorant Garamond",
-                            "fontWeight": "300",
-                            "fontStyle": "normal",
-                            "src": [
-                                "https://fonts.gstatic.com/s/cormorantgaramond/v16/co3YmX5slCNuHLi8bLeY9MK7whWMhyjYrEtFmSqn.woff2"
-                            ]
-                        },
-                        {
-                            "fontFamily": "Cormorant Garamond",
-                            "fontWeight": "400",
-                            "fontStyle": "normal",
-                            "src": [
-                                "https://fonts.gstatic.com/s/cormorantgaramond/v16/co3bmX5slCNuHLi8bLeY9MK7whWMhyjQAll5vg.woff2"
-                            ]
-                        }
-                    ]
+                    "slug": "cormorant-garamond"
                 },
                 {
                     "fontFamily": "'Lato', sans-serif",
                     "name": "Lato",
-                    "slug": "lato",
-                    "fontFace": [
-                        {
-                            "fontFamily": "Lato",
-                            "fontWeight": "300",
-                            "fontStyle": "normal",
-                            "src": [
-                                "https://fonts.gstatic.com/s/lato/v24/S6u9w4BMUTPHh7USSwiPGQ.woff2"
-                            ]
-                        },
-                        {
-                            "fontFamily": "Lato",
-                            "fontWeight": "400",
-                            "fontStyle": "normal",
-                            "src": [
-                                "https://fonts.gstatic.com/s/lato/v24/S6uyw4BMUTPHjx4wXg.woff2"
-                            ]
-                        },
-                        {
-                            "fontFamily": "Lato",
-                            "fontWeight": "700",
-                            "fontStyle": "normal",
-                            "src": [
-                                "https://fonts.gstatic.com/s/lato/v24/S6u9w4BMUTPHh6UVSwiPGQ.woff2"
-                            ]
-                        }
-                    ]
+                    "slug": "lato"
                 },
                 {
                     "fontFamily": "'EB Garamond', serif",
                     "name": "EB Garamond",
-                    "slug": "eb-garamond",
-                    "fontFace": [
-                        {
-                            "fontFamily": "EB Garamond",
-                            "fontWeight": "400 800",
-                            "fontStyle": "normal",
-                            "src": [
-                                "https://fonts.gstatic.com/s/ebgaramond/v27/SlGDmQSNjdsmc35JDF1K5E55YMjF_7DPuGi-2fA.woff2"
-                            ]
-                        },
-                        {
-                            "fontFamily": "EB Garamond",
-                            "fontWeight": "400 800",
-                            "fontStyle": "italic",
-                            "src": [
-                                "https://fonts.gstatic.com/s/ebgaramond/v27/SlGFmQSNjdsmc35JDF1K5GRwUjcdlttVFmC7.woff2"
-                            ]
-                        }
-                    ]
+                    "slug": "eb-garamond"
                 }
             ]
         },
@@ -181,7 +101,6 @@
         "elements": {
             "heading": {
                 "typography": {
-                    "fontFamily": "var(--wp--preset--font-family--cormorant-garamond)",
                     "fontWeight": "400",
                     "lineHeight": "1.2"
                 },
@@ -225,22 +144,25 @@
             },
             "button": {
                 "color": {
-                    "background": "var(--wp--preset--color--grafito)",
-                    "text": "var(--wp--preset--color--gris-muy-claro)"
+                    "background": "var(--wp--preset--color--violeta-polvo)",
+                    "text": "#ffffff"
                 },
                 "typography": {
                     "fontFamily": "var(--wp--preset--font-family--lato)",
                     "fontSize": "0.9rem",
-                    "letterSpacing": "0.1em",
+                    "letterSpacing": "0.15em",
                     "textTransform": "uppercase"
                 },
                 "border": {
-                    "radius": "0"
+                    "radius": "0",
+                    "color": "var(--wp--preset--color--violeta-polvo)",
+                    "width": "1px",
+                    "style": "solid"
                 },
                 ":hover": {
                     "color": {
                         "background": "var(--wp--preset--color--violeta-polvo)",
-                        "text": "var(--wp--preset--color--gris-muy-claro)"
+                        "text": "var(--wp--preset--color--grafito)"
                     }
                 }
             }

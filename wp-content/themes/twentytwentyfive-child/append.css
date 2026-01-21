@@ -1,0 +1,18 @@
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   VISIBILITY UTILITIES (.movil / .desktop)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* .desktop: Visible on Tablet (Medium) and Desktop. Hidden on Mobile. */
+@media only screen and (max-width: 767px) {
+    .desktop {
+        display: none !important;
+    }
+}
+
+/* .movil: Visible on Mobile. Hidden on Tablet (Medium) and Desktop. */
+@media only screen and (min-width: 768px) {
+    .movil {
+        display: none !important;
+    }
+}

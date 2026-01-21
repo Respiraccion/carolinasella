@@ -1,0 +1,1610 @@
+/*
+ Theme Name:   Twenty Twenty-Five Child
+ Template:     twentytwentyfive
+ Version:      1.3
+*/
+
+/* ════════════════════════════════════════════════════════════════════════════
+   📋 ÍNDICE DE CONTENIDOS (Table of Contents)
+   
+   ⚠️ IMPORTANTE: Este archivo solo debe ser editado por el AGENTE.
+   Para cambios de estilo, usa primero WordPress → Apariencia → Editor.
+   
+   SECCIONES:
+   ──────────────────────────────────────────────────────────────────────────
+   1. FUENTES (@font-face)............................ ~Línea 30
+   2. HEADER (Logo, menú, navegación)................ ~Línea 50
+   3. HERO SECTION (Imagen principal)................ ~Línea 315
+   4. PROFILE CIRCLE (Foto de perfil)................ ~Línea 360
+   5. IMÁGENES (Configuración general)............... ~Línea 410
+   6. NAVEGACIÓN/SUBMENÚS ........................... ~Línea 435
+   7. ESPACIADO Y MÁRGENES GLOBALES.................. ~Línea 462
+   8. RESPONSIVE - MÓVILES (<480px).................. ~Línea 595
+   9. RESPONSIVE - MÓVILES MEDIANOS (480-767px)...... ~Línea 700
+   10. RESPONSIVE - TABLETS (768-1024px)............. ~Línea 740
+   11. REGLAS COMUNES PANTALLAS PEQUEÑAS............. ~Línea 785
+   ──────────────────────────────────────────────────────────────────────────
+   
+   🔧 CÓMO MODIFICAR:
+   - Buscar (Ctrl+F) por el número de línea o nombre de sección
+   - Las VARIABLES CONFIGURABLES están en :root (~línea 570)
+   ════════════════════════════════════════════════════════════════════════════ */
+
+/* Import Cronde font */
+@font-face {
+    font-family: 'Cronde';
+    src: url('fonts/CRONDERegular.woff2') format('woff2'),
+        url('fonts/CRONDERegular.woff') format('woff'),
+        url('fonts/CRONDERegular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cronde';
+    src: url('fonts/CRONDEItalic.woff2') format('woff2'),
+        url('fonts/CRONDEItalic.woff') format('woff'),
+        url('fonts/CRONDEItalic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* CRITICAL: Remove gap between header and content */
+body,
+body.wp-site-blocks,
+.wp-site-blocks,
+.wp-site-blocks>*,
+.wp-block-template-part,
+.has-violeta-polvo-background-color,
+header,
+main {
+    margin: 0 !important;
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.wp-block-cover,
+.wp-block-cover.hero-section,
+.alignfull {
+    margin-top: 0 !important;
+    margin-block-start: 0 !important;
+}
+
+/* Header with violet background - RESTORED SIZE & CENTERED TEXT */
+.has-violeta-polvo-background-color {
+    background-color: var(--wp--preset--color--violeta-polvo);
+    padding: 16px 20px;
+    /* Symmetric padding */
+    min-height: 60px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+
+    /* Strict Top Sticky */
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1000 !important;
+    width: 100% !important;
+    margin: 0 !important;
+    border-radius: 0;
+    box-shadow: none;
+    box-sizing: border-box !important;
+}
+
+/* Reset body padding */
+body>.wp-site-blocks {
+    padding-top: 0 !important;
+}
+
+.custom-header-bar {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    position: relative !important;
+    height: 100% !important;
+}
+
+/* Ensure left and right sections stay put */
+/* Ensure left and right sections stay put and fill height */
+.header-section-left {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    z-index: 2 !important;
+    flex: 1 !important;
+    height: 100% !important;
+    min-height: 100% !important;
+}
+
+
+
+/* Ensure Cart is on extreme right */
+/* Ensure Cart is on extreme right - ABSOLUTE POSITIONING */
+.wc-block-mini-cart {
+    margin-left: auto !important;
+    order: 9999 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    /* Force absolute to right edge to avoid overlap with center title */
+    position: absolute !important;
+    right: 40px !important;
+    /* Match header padding */
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    z-index: 100 !important;
+}
+
+/* Make Cart Icon Bigger */
+.wc-block-mini-cart__button {
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.wc-block-mini-cart svg,
+.wc-block-mini-cart .wc-block-mini-cart__icon {
+    width: 32px !important;
+    /* Increased size */
+    height: 32px !important;
+    fill: var(--wp--preset--color--grafito) !important;
+}
+
+/* Ensure price/count is hidden or styled if present, user just mentioned icon */
+.wc-block-mini-cart__badge {
+    background-color: var(--wp--preset--color--grafito) !important;
+    color: var(--wp--preset--color--violeta-polvo) !important;
+}
+
+.header-section-right {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    z-index: 2 !important;
+    flex: 1 !important;
+    height: 100% !important;
+    min-height: 100% !important;
+}
+
+/* ABSOLUTE CENTER for Site Title - STRICT */
+.header-section-center {
+    position: absolute !important;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    z-index: 1 !important;
+    width: auto !important;
+    display: flex !important;
+    justify-content: center !important;
+    white-space: nowrap !important;
+    pointer-events: none;
+    /* Let clicks pass through if overlapping invisible areas */
+}
+
+/* Enable pointer events on the link itself */
+.header-section-center a {
+    pointer-events: auto !important;
+}
+
+/* Site Title styling */
+.elegant-site-title,
+.wp-block-site-title {
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.elegant-site-title a,
+.wp-block-site-title a {
+    font-family: 'Cronde', serif !important;
+    font-weight: 400 !important;
+    letter-spacing: 0.15em !important;
+    text-transform: capitalize !important;
+    font-size: clamp(1.7rem, 3.5vw, 2.2rem) !important;
+    color: var(--wp--preset--color--grafito) !important;
+    line-height: 1 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: inline-block !important;
+    text-decoration: none !important;
+}
+
+/* Force centering for Navigation menu button */
+.custom-nav-menu,
+.wp-block-navigation {
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    height: 100% !important;
+    min-height: 100% !important;
+    /* Ensure hamburger stays left */
+}
+
+.wp-block-navigation__responsive-container-open {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    /* Strict dimensions */
+    width: 40px !important;
+    height: 40px !important;
+    min-height: 40px !important;
+    max-height: 40px !important;
+
+    /* Remove any margin/padding that could shift it */
+    padding: 0 !important;
+    margin: 0 !important;
+
+    /* CRITICAL: Vertical centering fix */
+    align-self: center !important;
+
+    background: transparent !important;
+    border: none !important;
+}
+
+.wp-block-navigation__responsive-container-open svg {
+    width: 40px !important;
+    /* Larger hamburger */
+    height: 40px !important;
+    fill: var(--wp--preset--color--grafito);
+    display: block !important;
+}
+
+/* Navigation overlay styling - Right side */
+.custom-nav-menu .wp-block-navigation__responsive-container.is-menu-open,
+.wp-block-navigation__responsive-container.is-menu-open {
+    padding: 30px 40px !important;
+    padding-right: 60px !important;
+    max-width: fit-content !important;
+    width: auto !important;
+    min-width: 280px !important;
+    height: 100vh !important;
+    background-color: var(--wp--preset--color--grafito) !important;
+    color: var(--wp--preset--color--violeta-polvo) !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    /* Left aligned overlay */
+    bottom: 0 !important;
+    z-index: 2000 !important;
+    overflow-y: auto !important;
+    /* Allow scrolling if menu is long */
+}
+
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content {
+    padding-top: 50px !important;
+    padding-bottom: 20px !important;
+    gap: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+    width: 100% !important;
+}
+
+/* Menu Items */
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item {
+    width: 100% !important;
+    display: block !important;
+    text-align: left !important;
+    margin-bottom: 15px !important;
+    position: relative !important;
+}
+
+/* SUBMENU: ACCORDION STYLE (Push items down) */
+.wp-block-navigation__submenu-container {
+    padding: 10px 0 10px 20px !important;
+    /* Indent content */
+    position: relative !important;
+    /* NOT absolute */
+    top: auto !important;
+    left: auto !important;
+    width: 100% !important;
+    background-color: transparent !important;
+    /* Seamless background */
+    margin: 0 !important;
+    z-index: auto !important;
+    border-radius: 0;
+    box-shadow: none;
+    display: none !important;
+    border-left: 1px solid #5a5a5a !important;
+    /* Guide line */
+}
+
+/* Submenu items */
+.wp-block-navigation__submenu-container .wp-block-navigation-item {
+    margin-bottom: 8px !important;
+    padding: 0 !important;
+}
+
+.wp-block-navigation__submenu-container .wp-block-navigation-item a {
+    font-size: 1.1rem !important;
+    color: #8c8c8c !important;
+    /* Slightly dimmer for hierarchy */
+    display: block !important;
+}
+
+.wp-block-navigation__submenu-container .wp-block-navigation-item a:hover {
+    color: #ffffff !important;
+}
+
+/* Show submenu on hover/focus */
+.wp-block-navigation-item.has-child:hover>.wp-block-navigation__submenu-container,
+.wp-block-navigation-item.has-child.is-open>.wp-block-navigation__submenu-container {
+    display: block !important;
+}
+
+/* Close button positioning */
+.wp-block-navigation__responsive-container-close {
+    position: absolute !important;
+    top: 20px !important;
+    right: 20px !important;
+    margin: 0 !important;
+}
+
+.wp-block-navigation__responsive-container-close svg {
+    fill: var(--wp--preset--color--violeta-polvo) !important;
+    width: 20px;
+    height: 20px;
+}
+
+/* Main Link Styles */
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item>a {
+    font-size: 1.3rem !important;
+    color: var(--wp--preset--color--violeta-polvo) !important;
+    text-transform: capitalize !important;
+    display: block !important;
+    width: 100% !important;
+}
+
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item>a:hover {
+    color: #ffffff !important;
+}
+
+/* Hero section - OVERLAY TEXT ON IMAGE (Reduced Height) */
+.hero-section {
+    position: relative;
+    width: 100%;
+    min-height: 50vh !important;
+    /* Reduced from 60vh */
+    max-height: 50vh !important;
+    overflow: hidden;
+    margin: 0 !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Center text vertically */
+    align-items: center;
+}
+
+/* Hero Image - Background (absolute positioning) */
+.hero-section img,
+.hero-section .wp-block-cover__image-background {
+    width: 100%;
+    height: 50vh !important;
+    object-fit: cover;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    z-index: 1 !important;
+}
+
+/* Text Container - Overlay on Image */
+.hero-section .wp-block-cover__inner-container,
+.hero-section .wp-block-group__inner-container {
+    padding: 40px !important;
+    position: relative !important;
+    z-index: 5 !important;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Asegurar que el texto del hero sea legible */
+.hero-section p,
+.hero-section h1,
+.hero-section h2,
+.hero-section h3 {
+    position: relative;
+    z-index: 5;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    /* Ayuda legibilidad sobre imágenes */
+}
+
+/* Overlapping profile circle - bigger size */
+.profile-circle-container {
+    position: relative;
+    margin-top: -120px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* NOTA: Se removió border-radius: 50% para permitir control desde WordPress.
+   Si quieres hacer la imagen circular, agrega en WordPress:
+   - Clase CSS: 'is-style-rounded' o
+   - Estilo inline: border-radius: 50%
+   O desde CSS Adicional: .profile-circle-container img { border-radius: 50%; } */
+.profile-circle-container img {
+    width: 220px !important;
+    height: 220px !important;
+    /* border-radius: 50%; -- REMOVIDO para control desde WordPress */
+    object-fit: cover;
+    border: 6px solid var(--wp--preset--color--base);
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Larger body text */
+body {
+    font-size: 1.125rem;
+}
+
+/* Better paragraph spacing */
+.wp-block-paragraph {
+    line-height: 1.8;
+}
+
+/* Hide auto-generated page titles */
+.entry-title,
+.wp-block-post-title {
+    display: none;
+}
+
+/* Make profile picture bigger */
+.profile-pic img,
+.profile-circle-container img {
+    width: 280px !important;
+    height: 280px !important;
+}
+
+.profile-circle-container {
+    margin-top: -140px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   IMÁGENES - CONFIGURACIÓN POR DEFECTO
+   Por defecto todas las imágenes son rectangulares.
+   Para hacer una imagen circular, usar la clase 'is-style-rounded' en WordPress
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Reset: Todas las imágenes son rectangulares por defecto */
+.wp-block-image img,
+.wp-block-cover img,
+figure img {
+    border-radius: 0 !important;
+    /* Rectangular por defecto */
+}
+
+/* Solo aplicar circular si tiene la clase específica */
+.is-style-rounded img,
+.wp-block-image.is-style-rounded img {
+    border-radius: 50% !important;
+}
+
+/* Clase helper para bordes redondeados suaves (no circular) */
+.rounded-corners img {
+    border-radius: 12px !important;
+}
+
+/* Hide submenu items by default in navigation */
+.wp-block-navigation__submenu-container,
+.wp-block-navigation .wp-block-navigation__submenu-container {
+    display: none !important;
+}
+
+/* Show submenu when parent is clicked/hovered */
+.wp-block-navigation-item.has-child:hover .wp-block-navigation__submenu-container,
+.wp-block-navigation-item.has-child.is-open .wp-block-navigation__submenu-container,
+.wp-block-navigation-item.has-child .wp-block-navigation__submenu-container.is-open {
+    display: block !important;
+}
+
+/* Add arrow indicator for items with submenus */
+.wp-block-navigation-item.has-child>a::after {
+    content: " ›";
+    margin-left: 0.5em;
+}
+
+
+/* Style submenu items */
+.wp-block-navigation__submenu-container .wp-block-navigation-item {
+    padding-left: 1.5rem;
+    font-size: 1.2rem;
+}
+
+/* NUCLEAR OPTION: Kill ALL gaps between header and content */
+* {
+    margin-block-start: 0 !important;
+    margin-block-end: 0 !important;
+}
+
+.wp-site-blocks>*+* {
+    margin-block-start: 0 !important;
+}
+
+/* Force header group to have no bottom margin */
+.has-violeta-polvo-background-color.wp-block-group {
+    margin-bottom: 0 !important;
+    padding-bottom: var(--wp--preset--spacing--40, 40px) !important;
+}
+
+/* Force next element after header to have no top margin */
+.has-violeta-polvo-background-color+* {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* Kill WordPress default block spacing */
+.wp-block-group.alignfull+.wp-block-group.alignfull {
+    margin-top: 0 !important;
+}
+
+/* Target the specific template structure */
+body>.wp-site-blocks>* {
+    margin: 0 !important;
+}
+
+/* HIDE the post title that's creating the gap */
+.wp-block-post-title,
+h1.wp-block-post-title {
+    display: none !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Kill the entry-content padding that creates gap */
+.entry-content.alignfull.wp-block-post-content {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
+
+/* Make profile circle overlap hero image MORE */
+.profile-circle-container {
+    margin-top: -160px !important;
+}
+
+/* Kill the main element margin that creates the gap */
+main,
+main.wp-block-group {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* Kill all wrapper padding/margin */
+.wp-block-group.has-global-padding {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
+
+.entry-content.wp-block-post-content {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
+
+/* Target the specific first wrapper after header */
+main>.wp-block-group:first-child {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
+
+/* FORCE profile circle to overlap hero image */
+.profile-circle-container.wp-block-group {
+    margin-top: -160px !important;
+    position: relative !important;
+    z-index: 100 !important;
+    background: transparent !important;
+}
+
+/* Remove padding from profile container wrapper */
+.profile-circle-container.has-global-padding {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+/* Ensure hero section allows overlap */
+.hero-section.wp-block-cover {
+    margin-bottom: 0 !important;
+    position: relative !important;
+    z-index: 1 !important;
+}
+
+/* ╔═══════════════════════════════════════════════════════════════════════════╗
+   ║                                                                           ║
+   ║                    RESPONSIVE DESIGN - MOBILE & TABLET                    ║
+   ║                      Best Practices for Small Screens                     ║
+   ║                                                                           ║
+   ║  Esta sección está diseñada para ser fácilmente configurable desde       ║
+   ║  WordPress usando las variables CSS definidas en :root                   ║
+   ║                                                                           ║
+   ╚═══════════════════════════════════════════════════════════════════════════╝ */
+
+:root {
+    /* ═══ VARIABLES CONFIGURABLES DESDE WORDPRESS ═══ */
+
+    /* Márgenes laterales para diferentes tamaños de pantalla */
+    --mobile-page-margin: 16px;
+    /* Reduced for balanced look */
+    /* Móviles pequeños (< 480px) */
+    --mobile-medium-margin: 20px;
+    /* Reduced */
+    /* Móviles medianos (480px - 768px) */
+    --tablet-page-margin: 32px;
+    /* Reduced from 48px */
+    /* Tablets (768px - 1024px) */
+
+    /* Espaciado vertical entre secciones */
+    --mobile-section-spacing: 40px;
+    --tablet-section-spacing: 60px;
+
+    /* Tamaños de fuente responsivos - Increased by ~2px */
+    --mobile-base-font: 17px;
+    --tablet-base-font: 18px;
+
+    /* Altura mínima de elementos táctiles (recomendación: 44px mínimo) */
+    --touch-target-min-height: 44px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   MÓVILES PEQUEÑOS (< 480px)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@media only screen and (max-width: 479px) {
+
+    /* ─── Tipografía Optimizada ─── */
+    body {
+        font-size: var(--mobile-base-font) !important;
+        line-height: 1.6 !important;
+    }
+
+    h1 {
+        font-size: clamp(1.75rem, 5vw, 2.25rem) !important;
+    }
+
+    h2 {
+        font-size: clamp(1.625rem, 4.5vw, 2.125rem) !important;
+        /* +2 puntos: 1.5rem → 1.625rem, 2rem → 2.125rem */
+    }
+
+    h3 {
+        font-size: clamp(1.25rem, 4vw, 1.75rem) !important;
+    }
+
+    h4 {
+        font-size: clamp(1.125rem, 3.5vw, 1.5rem) !important;
+    }
+
+    h5,
+    h6 {
+        font-size: clamp(1rem, 3vw, 1.25rem) !important;
+    }
+
+    /* ─── Márgenes Laterales ─── */
+    main>*:not(.hero-section):not(.wp-block-cover):not(.alignfull):not(.has-violeta-polvo-background-color),
+    .entry-content>*:not(.hero-section):not(.wp-block-cover):not(.alignfull) {
+        padding-left: var(--mobile-page-margin) !important;
+        padding-right: var(--mobile-page-margin) !important;
+        box-sizing: border-box !important;
+    }
+
+    /* ─── Contenido en Grupos Full Width ─── */
+    .wp-block-group.alignfull:not(.hero-section):not(.wp-block-cover)>*:not(.alignfull),
+    .wp-block-group.alignwide:not(.hero-section):not(.wp-block-cover)>*:not(.alignfull) {
+        padding-left: var(--mobile-page-margin) !important;
+        padding-right: var(--mobile-page-margin) !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        width: auto !important;
+        box-sizing: border-box !important;
+    }
+
+    /* ─── Red de Seguridad para Textos ─── */
+    /* NOTA: Se removieron las reglas de max-width que causaban alineación a la izquierda.
+       El padding en los contenedores padres ya maneja el espaciado correctamente. */
+
+    /* ─── Espaciado Vertical Optimizado ─── */
+    main>*+* {
+        margin-top: var(--mobile-section-spacing) !important;
+    }
+
+    .wp-block-paragraph+.wp-block-paragraph {
+        margin-top: 1.25em !important;
+    }
+
+    /* ─── Elementos Táctiles (Touch Targets) ─── */
+    button,
+    .wp-block-button__link,
+    a.wp-element-button,
+    input[type="submit"] {
+        min-height: var(--touch-target-min-height) !important;
+        padding: 12px 24px !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    /* HAMBURGER MENU - Override touch target padding */
+    .wp-block-navigation__responsive-container-open {
+        min-height: 40px !important;
+        max-height: 40px !important;
+        width: 40px !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    /* ─── Imágenes Responsivas ─── */
+    img:not(.profile-circle-container img) {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+
+    /* ─── Tablas Responsivas ─── */
+    table {
+        display: block !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+    }
+
+    /* ─── Hero Section Ajustado ─── */
+    .hero-section {
+        min-height: 60vh !important;
+    }
+
+    .hero-section img {
+        height: 60vh !important;
+    }
+
+    /* ─── Profile Circle Ajustado ─── */
+    .profile-circle-container img {
+        width: 180px !important;
+        height: 180px !important;
+    }
+
+    .profile-circle-container {
+        margin-top: -90px !important;
+    }
+
+    /* ─── HEADER MOBILE FIX ─── */
+    .has-violeta-polvo-background-color {
+        padding: 12px 16px !important;
+        /* Symmetric smaller padding on mobile */
+        min-height: 56px !important;
+    }
+
+    .header-section-left,
+    .header-section-right {
+        flex: 0 0 auto !important;
+        /* Don't grow, natural width */
+        min-width: 44px !important;
+        /* Touch target minimum */
+    }
+
+    .header-section-center {
+        flex: 1 !important;
+    }
+
+    /* Cart positioning on mobile */
+    .wc-block-mini-cart {
+        position: relative !important;
+        right: auto !important;
+        top: auto !important;
+        transform: none !important;
+    }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   MÓVILES MEDIANOS (480px - 767px)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+
+    /* ─── Tipografía ─── */
+    body {
+        font-size: calc(var(--mobile-base-font) + 1px) !important;
+    }
+
+    /* ─── Márgenes Laterales ─── */
+    main>*:not(.hero-section):not(.wp-block-cover):not(.alignfull):not(.has-violeta-polvo-background-color),
+    .entry-content>*:not(.hero-section):not(.wp-block-cover):not(.alignfull) {
+        padding-left: var(--mobile-medium-margin) !important;
+        padding-right: var(--mobile-medium-margin) !important;
+        box-sizing: border-box !important;
+    }
+
+    .wp-block-group.alignfull:not(.hero-section):not(.wp-block-cover)>*:not(.alignfull),
+    .wp-block-group.alignwide:not(.hero-section):not(.wp-block-cover)>*:not(.alignfull) {
+        padding-left: var(--mobile-medium-margin) !important;
+        padding-right: var(--mobile-medium-margin) !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+
+
+    /* ─── Profile Circle ─── */
+    .profile-circle-container img {
+        width: 220px !important;
+        height: 220px !important;
+    }
+
+    .profile-circle-container {
+        margin-top: -110px !important;
+    }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   TABLETS (768px - 1024px)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+
+    /* ─── Tipografía ─── */
+    body {
+        font-size: var(--tablet-base-font) !important;
+    }
+
+    /* ─── Márgenes Laterales ─── */
+    main>*:not(.hero-section):not(.wp-block-cover):not(.alignfull):not(.has-violeta-polvo-background-color),
+    .entry-content>*:not(.hero-section):not(.wp-block-cover):not(.alignfull) {
+        padding-left: var(--tablet-page-margin) !important;
+        padding-right: var(--tablet-page-margin) !important;
+        box-sizing: border-box !important;
+    }
+
+    .wp-block-group.alignfull:not(.hero-section):not(.wp-block-cover)>*:not(.alignfull),
+    .wp-block-group.alignwide:not(.hero-section):not(.wp-block-cover)>*:not(.alignfull) {
+        margin-left: var(--tablet-page-margin) !important;
+        margin-right: var(--tablet-page-margin) !important;
+        /* Reset full‑width grupos en tablets */
+        max-width: 100% !important;
+    }
+
+
+
+
+    /* ─── Espaciado Vertical ─── */
+    main>*+* {
+        margin-top: var(--tablet-section-spacing) !important;
+    }
+
+    /* ─── Ancho Máximo de Contenido (Legibilidad) ─── */
+    .entry-content>*:not(.alignfull):not(.alignwide) {
+        max-width: 720px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   REGLAS COMUNES PARA TODAS LAS PANTALLAS PEQUEÑAS/MEDIANAS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@media only screen and (max-width: 1024px) {
+
+    /* ─── Asegurar Full Width para Hero y Header ─── */
+    .hero-section,
+    .wp-block-cover,
+    header,
+    .has-violeta-polvo-background-color {
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        max-width: 100% !important;
+    }
+
+    /* ─── Mejorar Legibilidad ─── */
+    p {
+        text-align: left !important;
+        hyphens: auto !important;
+        word-wrap: break-word !important;
+    }
+
+    /* ─── Optimizar Listas ─── */
+    ul,
+    ol {
+        padding-left: 1.5em !important;
+    }
+
+    li {
+        margin-bottom: 0.5em !important;
+    }
+
+    /* ─── Formularios Responsivos ─── */
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="url"],
+    textarea,
+    select {
+        width: 100% !important;
+        max-width: 100% !important;
+        font-size: 16px !important;
+        /* Previene zoom en iOS */
+        padding: 12px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* ─── Navegación Móvil Optimizada ─── */
+    .wp-block-navigation__responsive-container.is-menu-open {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    /* ─── Prevenir Overflow Horizontal ─── */
+    body {
+        overflow-x: hidden !important;
+    }
+
+    * {
+        max-width: 100% !important;
+    }
+
+    /* Excepciones para elementos que necesitan ancho completo */
+    .hero-section,
+    .hero-section *,
+    .wp-block-cover,
+    .wp-block-cover *,
+    .has-violeta-polvo-background-color,
+    .has-violeta-polvo-background-color * {
+        max-width: none !important;
+    }
+
+    /* ─── Scroll Suave ─── */
+    html {
+        scroll-behavior: smooth !important;
+    }
+
+    /* ─── Accesibilidad: Focus Visible ─── */
+    a:focus,
+    button:focus,
+    input:focus,
+    textarea:focus {
+        outline: 2px solid var(--wp--preset--color--grafito) !important;
+        outline-offset: 2px !important;
+    }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   LANDSCAPE MODE (Orientación Horizontal en Móviles)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@media only screen and (max-height: 500px) and (orientation: landscape) {
+
+    /* Reducir altura del hero en landscape */
+    .hero-section {
+        min-height: 50vh !important;
+    }
+
+    .hero-section img {
+        height: 50vh !important;
+    }
+
+    /* Ajustar profile circle */
+    .profile-circle-container img {
+        width: 140px !important;
+        height: 140px !important;
+    }
+
+    .profile-circle-container {
+        margin-top: -70px !important;
+    }
+
+    /* Header más compacto */
+    .has-violeta-polvo-background-color {
+        padding: 12px 24px !important;
+    }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   FIN DE LA SECCIÓN RESPONSIVE
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   12. EFECTOS ESPECIALES (Gallery, Animations)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ARTISTIC TATTOOS GALLERY
+   Class: .bw-gallery or applied to global gallery if desired.
+   Effect: Grayscale thumbnails, color on hover.
+*/
+
+.wp-block-gallery figure img,
+.wp-block-image.bw-effect img {
+    filter: grayscale(100%);
+    transition: filter 0.4s ease, transform 0.4s ease;
+    transform: scale(1);
+    cursor: pointer;
+}
+
+.wp-block-gallery figure img:hover,
+.wp-block-image.bw-effect img:hover {
+    filter: grayscale(0%);
+    transform: scale(1.02);
+}
+
+/* Lightbox support (Generic WP Lightbox) */
+/* When lightbox is open, ensure images are color */
+.wp-lightbox-overlay img {
+    filter: grayscale(0%) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   13. BLOG ARCHIVE STYLING
+   Modern horizontal card layout with image, title, and excerpt
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   OLD BLOG CSS - COMMENTED OUT (Conflicts with new grid layout)
+   If you need to restore the old list layout, uncomment this section
+   ═══════════════════════════════════════════════════════════════════════════
+
+/* Blog Page Container */
+/*.blog-page {
+    max-width: 900px !important;
+    margin: 0 auto !important;
+}
+
+.blog-page h1 {
+    display: block !important;
+    margin-bottom: 16px !important;
+}
+
+/* Blog Query Container */
+/*.blog-query {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Blog Post List */
+/*.blog-post-list {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* Individual Blog Post Card */
+.blog-post-card {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    gap: 24px !important;
+    padding: 24px 0 !important;
+    border-bottom: 1px solid #e0e0e0 !important;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.blog-post-card:hover {
+    transform: translateX(8px);
+    background-color: rgba(165, 155, 179, 0.05);
+}
+
+/* Featured Image in Blog Cards */
+.blog-post-card .wp-block-post-featured-image {
+    flex-shrink: 0 !important;
+    width: 120px !important;
+    height: 120px !important;
+    margin: 0 !important;
+    overflow: hidden;
+    border-radius: 8px !important;
+}
+
+.blog-post-card .wp-block-post-featured-image a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.blog-post-card .wp-block-post-featured-image img {
+    width: 120px !important;
+    height: 120px !important;
+    object-fit: cover !important;
+    border-radius: 8px !important;
+    transition: transform 0.3s ease;
+    filter: grayscale(0%) !important;
+    /* Override gallery B&W effect */
+}
+
+.blog-post-card:hover .wp-block-post-featured-image img {
+    transform: scale(1.05);
+}
+
+/* Blog Post Title */
+.blog-post-card .wp-block-post-title {
+    display: block !important;
+    font-size: 1.25rem !important;
+    line-height: 1.3 !important;
+    margin: 0 0 8px 0 !important;
+    font-weight: 600 !important;
+}
+
+.blog-post-card .wp-block-post-title a {
+    color: var(--wp--preset--color--grafito) !important;
+    text-decoration: none !important;
+    transition: color 0.3s ease;
+}
+
+.blog-post-card .wp-block-post-title a:hover {
+    color: var(--wp--preset--color--violeta-polvo) !important;
+}
+
+/* Blog Post Excerpt */
+.blog-post-card .wp-block-post-excerpt {
+    margin: 0 !important;
+    font-size: 0.95rem !important;
+    line-height: 1.6 !important;
+    color: #666 !important;
+}
+
+.blog-post-card .wp-block-post-excerpt__excerpt {
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    line-clamp: 2 !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    margin: 0 !important;
+}
+
+.blog-post-card .wp-block-post-excerpt__more-link {
+    display: none !important;
+}
+
+/* Blog Post Date */
+.blog-post-card .wp-block-post-date {
+    font-size: 0.85rem !important;
+    color: #999 !important;
+    margin: 4px 0 0 0 !important;
+}
+
+/* Newsletter CTA */
+.blog-newsletter-cta {
+    margin-top: 40px !important;
+    text-align: center;
+}
+
+.blog-newsletter-cta h3 {
+    margin: 0 0 12px 0 !important;
+    color: var(--wp--preset--color--grafito) !important;
+}
+
+.blog-newsletter-cta p {
+    margin: 0 !important;
+    color: var(--wp--preset--color--grafito) !important;
+}
+
+/* Query Pagination */
+.blog-query .wp-block-query-pagination {
+    margin-top: 40px !important;
+    justify-content: center !important;
+    gap: 16px !important;
+}
+
+.blog-query .wp-block-query-pagination a {
+    color: var(--wp--preset--color--grafito) !important;
+    text-decoration: none !important;
+    padding: 8px 16px !important;
+    border: 1px solid var(--wp--preset--color--grafito) !important;
+    border-radius: 4px !important;
+    transition: all 0.3s ease;
+}
+
+.blog-query .wp-block-query-pagination a:hover {
+    background-color: var(--wp--preset--color--grafito) !important;
+    color: #fff !important;
+}
+
+/* ─── Responsive: Mobile Blog Layout ─── */
+@media only screen and (max-width: 767px) {
+
+    .blog-post-card {
+        flex-direction: column !important;
+        gap: 16px !important;
+    }
+
+    .blog-post-card .wp-block-post-featured-image {
+        width: 100% !important;
+        height: 180px !important;
+    }
+
+    .blog-post-card .wp-block-post-featured-image img {
+        width: 100% !important;
+        height: 180px !important;
+    }
+
+    .blog-post-card .wp-block-post-title {
+        font-size: 1.15rem !important;
+    }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   LEGACY BLOG CSS - COMMENTED OUT 
+   This was forcing column layout and overriding WordPress grid
+   ═══════════════════════════════════════════════════════════════════════════ 
+/*
+/* Legacy blog/archive page support */
+/* Blog Archive Container */
+/*.blog .wp-block-query,
+.archive .wp-block-query,
+.wp-block-query.blog-list {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px var(--mobile-page-margin);
+}*/
+
+/* Individual Post Card - Horizontal Layout - DISABLED
+.blog .wp-block-post,
+.archive .wp-block-post,
+.wp-block-query .wp-block-post {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    gap: 24px !important;
+    padding: 24px 0 !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+    margin-bottom: 0 !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog .wp-block-post:hover,
+.archive .wp-block-post:hover {
+    transform: translateX(4px);
+}
+*/
+
+/* Post Featured Image - Small, Left Aligned - DISABLED
+.blog .wp-block-post-featured-image,
+.archive .wp-block-post-featured-image,
+.wp-block-query .wp-block-post-featured-image {
+    flex-shrink: 0 !important;
+    width: 120px !important;
+    height: 120px !important;
+    margin: 0 !important;
+    order: -1 !important;
+}
+
+.blog .wp-block-post-featured-image img,
+.archive .wp-block-post-featured-image img,
+.wp-block-query .wp-block-post-featured-image img {
+    width: 120px !important;
+    height: 120px !important;
+    object-fit: cover !important;
+    border-radius: 8px !important;
+    transition: transform 0.3s ease;
+}
+
+.blog .wp-block-post:hover .wp-block-post-featured-image img,
+.archive .wp-block-post:hover .wp-block-post-featured-image img {
+    transform: scale(1.05);
+}
+
+/* Post Content Container */
+.blog .wp-block-post-template,
+.archive .wp-block-post-template,
+.wp-block-query .wp-block-post-template {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 24px !important;
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* Post Title */
+.blog .wp-block-post-title,
+.archive .wp-block-post-title,
+.wp-block-query .wp-block-post-title {
+    display: block !important;
+    font-size: clamp(1.25rem, 2.5vw, 1.5rem) !important;
+    line-height: 1.3 !important;
+    margin: 0 0 8px 0 !important;
+    font-weight: 600 !important;
+}
+
+.blog .wp-block-post-title a,
+.archive .wp-block-post-title a,
+.wp-block-query .wp-block-post-title a {
+    color: var(--wp--preset--color--grafito) !important;
+    text-decoration: none !important;
+    transition: color 0.3s ease;
+}
+
+.blog .wp-block-post-title a:hover,
+.archive .wp-block-post-title a:hover {
+    color: var(--wp--preset--color--violeta-polvo) !important;
+}
+
+/* Post Excerpt - Limited to 2 lines */
+.blog .wp-block-post-excerpt,
+.archive .wp-block-post-excerpt,
+.wp-block-query .wp-block-post-excerpt {
+    margin: 0 !important;
+    font-size: 0.95rem !important;
+    line-height: 1.6 !important;
+    color: #666 !important;
+}
+
+.blog .wp-block-post-excerpt__excerpt,
+.archive .wp-block-post-excerpt__excerpt,
+.wp-block-query .wp-block-post-excerpt__excerpt {
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    line-clamp: 2 !important;
+    /* Standard property for compatibility */
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    margin: 0 !important;
+}
+
+/* Post Meta (Date, Author, etc.) */
+.blog .wp-block-post-date,
+.archive .wp-block-post-date,
+.wp-block-query .wp-block-post-date,
+.blog .wp-block-post-author,
+.archive .wp-block-post-author {
+    font-size: 0.85rem !important;
+    color: #999 !important;
+    margin: 8px 0 0 0 !important;
+}
+
+/* Newsletter Link/CTA */
+.blog-newsletter-cta,
+.archive-newsletter-cta {
+    margin-top: 60px !important;
+    padding: 40px !important;
+    background: linear-gradient(135deg, var(--wp--preset--color--violeta-polvo) 0%, #d4c5d9 100%) !important;
+    border-radius: 12px !important;
+    text-align: center !important;
+}
+
+.blog-newsletter-cta h3,
+.archive-newsletter-cta h3 {
+    margin: 0 0 16px 0 !important;
+    color: var(--wp--preset--color--grafito) !important;
+}
+
+.blog-newsletter-cta p,
+.archive-newsletter-cta p {
+    margin: 0 0 24px 0 !important;
+    color: var(--wp--preset--color--grafito) !important;
+}
+
+.blog-newsletter-cta .wp-block-button,
+.archive-newsletter-cta .wp-block-button {
+    margin: 0 !important;
+}
+
+/* ─── Responsive: Mobile Blog Layout ─── */
+@media only screen and (max-width: 767px) {
+
+    /* Stack image on top for mobile */
+    .blog .wp-block-post,
+    .archive .wp-block-post,
+    .wp-block-query .wp-block-post {
+        flex-direction: column !important;
+        gap: 16px !important;
+    }
+
+    /* Larger image on mobile */
+    .blog .wp-block-post-featured-image,
+    .archive .wp-block-post-featured-image,
+    .wp-block-query .wp-block-post-featured-image {
+        width: 100% !important;
+        height: 200px !important;
+    }
+
+    .blog .wp-block-post-featured-image img,
+    .archive .wp-block-post-featured-image img,
+    .wp-block-query .wp-block-post-featured-image img {
+        width: 100% !important;
+        height: 200px !important;
+    }
+
+    /* Adjust title size */
+    .blog .wp-block-post-title,
+    .archive .wp-block-post-title {
+        font-size: 1.25rem !important;
+    }
+}
+
+*/
+/* END OF OLD BLOG CSS - Use new grid layout below instead */
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   BLOG ARCHIVE - GRID LAYOUT (3 COLUMNS)
+   Beautiful card-based design matching the reference aesthetic
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   BLOG ARCHIVE - CARD STYLING & DEFAULTS
+   Designed to be editable in WordPress (Gutenberg)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* 
+   We target standard WordPress classes to apply the "Card" look 
+   but use lower specificity and avoids !important so Editor settings win.
+*/
+
+/* Main blog archive adjustments */
+.blog-archive-main {
+    background-color: #f8f7f4;
+    /* Default cream, changeable in editor */
+}
+
+/* 
+   GRID LAYOUT 
+   We let WordPress handle the columns via the Editor settings.
+   We just ensure the grid display is active if WP doesn't set it.
+*/
+.blog-grid {
+    /* display: grid is handled by WordPress 'is-layout-grid' class usually */
+    /* Only applying gap spacing if not set by user */
+    gap: 32px;
+}
+
+/* 
+   CARD STYLING 
+   This applies the "Card" look to the Post Template group 
+*/
+.blog-card {
+    background-color: #ffffff;
+    /* Default white, changeable */
+    border-radius: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Hover effects (these stay as they add the premium feel) */
+.blog-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Featured image container */
+.blog-card-image {
+    margin-bottom: 0 !important;
+    /* Ensure image sits flush */
+    overflow: hidden;
+}
+
+/* Image zoom effect */
+.blog-card-image img {
+    transition: transform 0.4s ease;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.blog-card:hover .blog-card-image img {
+    transform: scale(1.05);
+}
+
+/* Content Container */
+.blog-card-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    /* Default comfortable padding */
+}
+
+/* Metadata (Date & Reading Time) */
+.blog-card-meta {
+    font-size: 0.875rem;
+    color: #666;
+    margin-bottom: 16px;
+}
+
+.blog-card-meta .wp-block-post-date,
+.blog-card-meta .reading-time {
+    font-size: 0.875rem;
+    color: inherit;
+}
+
+/* 
+   TITLES 
+   Using Playfair Display as default, but allowing Editor font changes 
+*/
+.blog-card-title,
+.blog-card .wp-block-post-title {
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-weight: 700;
+    margin-bottom: 16px;
+    line-height: 1.3;
+}
+
+.blog-card-title a,
+.blog-card .wp-block-post-title a {
+    text-decoration: none;
+    color: #1a1a1a;
+    /* Default color */
+    transition: color 0.3s ease;
+}
+
+.blog-card-title a:hover,
+.blog-card .wp-block-post-title a:hover {
+    color: #666;
+}
+
+/* Excerpt */
+.blog-card-excerpt,
+.blog-card .wp-block-post-excerpt {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #4a4a4a;
+}
+
+/* Hide "Continue Reading" link to keep cards clean */
+.blog-card .wp-block-post-excerpt__more-link {
+    display: none;
+}
+
+/* Pagination Styling */
+.blog-grid-query .wp-block-query-pagination {
+    margin-top: 60px;
+    justify-content: center;
+}
+
+.blog-grid-query .wp-block-query-pagination a,
+.blog-grid-query .wp-block-query-pagination .page-numbers {
+    padding: 8px 16px;
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+
+.blog-grid-query .wp-block-query-pagination a:hover {
+    background: #f0f0f0;
+}
+
+.blog-grid-query .wp-block-query-pagination .page-numbers.current {
+    background: var(--wp--preset--color--grafito, #333);
+    color: #fff;
+    border-color: var(--wp--preset--color--grafito, #333);
+}
+
+/* 
+   RESPONSIVE 
+   We only enforce single column on very small screens to prevent breaking.
+   Tablet/Desktop columns are handled by WordPress Editor now.
+*/
+@media only screen and (max-width: 600px) {
+    .blog-grid {
+        /* Force 1 column only on mobile if standard grid fails */
+        grid-template-columns: 1fr !important;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .blog-card-content {
+        padding: 20px;
+    }
+}
+
+/* Import Font */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');

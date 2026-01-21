@@ -51,6 +51,98 @@
     font-display: swap;
 }
 
+
+/* Helper for Bodoni Moda - ensures it overrides defaults */
+.has-bodoni-moda-font-family {
+    font-family: 'Bodoni Moda', serif !important;
+}
+
+/* Utility to hide elements */
+.hide {
+    display: none !important;
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   CUSTOM BUTTON VARIANTS (.boton1, .boton2)
+   ────────────────────────────────────────────────────────────────────────── */
+
+/* Boton 1: Violet Outline (Primary) - Fix for Gutenberg Wrapper */
+/* Boton 1: Violet Outline (Primary) */
+.wp-block-button.boton1 {
+    border: none !important;
+    background: transparent !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+.boton1,
+.wp-block-button__link.boton1,
+.wp-block-button.boton1 .wp-block-button__link {
+    background-color: transparent !important;
+    color: var(--wp--preset--color--violeta-polvo) !important;
+    border: 1px solid var(--wp--preset--color--violeta-polvo) !important;
+    padding: 12px 32px !important;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+}
+
+.boton1:hover,
+.wp-block-button__link.boton1:hover,
+.wp-block-button.boton1 .wp-block-button__link:hover {
+    color: var(--wp--preset--color--grafito) !important;
+    background-color: var(--wp--preset--color--violeta-polvo) !important;
+    transform: translateY(-2px);
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   DEFAULT BUTTONS (Violet Fill)
+   Applies to standard block buttons, submit buttons, and WooCommerce buttons
+   ────────────────────────────────────────────────────────────────────────── */
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+.button,
+.wp-block-button__link:not(.boton1),
+.wp-element-button,
+.wc-block-grid__product-add-to-cart.wp-block-button__link {
+    background-color: var(--wp--preset--color--violeta-polvo) !important;
+    color: #ffffff !important;
+    border: 1px solid var(--wp--preset--color--violeta-polvo) !important;
+    padding: 12px 32px !important;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none !important;
+    border-radius: 0 !important;
+}
+
+button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover,
+.button:hover,
+.wp-block-button__link:not(.boton1):hover,
+.wp-element-button:hover,
+.wc-block-grid__product-add-to-cart.wp-block-button__link:hover {
+    color: var(--wp--preset--color--grafito) !important;
+    background-color: var(--wp--preset--color--violeta-polvo) !important;
+    transform: translateY(-2px);
+}
+
 /* CRITICAL: Remove gap between header and content */
 /* ═══════════════════════════════════════════════════════════════════════════
    HEADER SPACING - Only remove gap between header and first content block
@@ -117,18 +209,9 @@ body>.wp-site-blocks {
 /* Ensure Cart is on extreme right */
 /* Ensure Cart is on extreme right - ABSOLUTE POSITIONING */
 .wc-block-mini-cart {
-    margin-left: auto !important;
-    order: 9999 !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-
-    /* Force absolute to right edge to avoid overlap with center title */
-    position: absolute !important;
-    right: 40px !important;
-    /* Match header padding */
-    top: 50% !important;
-    transform: translateY(-50%) !important;
     z-index: 100 !important;
 }
 
@@ -338,14 +421,22 @@ body>.wp-site-blocks {
 
 /* Close button positioning */
 .wp-block-navigation__responsive-container-close {
+    background-color: transparent !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    color: #ffffff !important;
+    fill: #ffffff !important;
     position: absolute !important;
     top: 20px !important;
     right: 20px !important;
     margin: 0 !important;
+    padding: 0 !important;
 }
 
 .wp-block-navigation__responsive-container-close svg {
-    fill: var(--wp--preset--color--violeta-polvo) !important;
+    fill: #ffffff !important;
+    color: #ffffff !important;
     width: 20px;
     height: 20px;
 }
@@ -367,9 +458,8 @@ body>.wp-site-blocks {
 .hero-section {
     position: relative;
     width: 100%;
-    min-height: 50vh !important;
-    /* Reduced from 60vh */
-    max-height: 50vh !important;
+    min-height: 55vh !important;
+    max-height: 55vh !important;
     overflow: hidden;
     margin: 0 !important;
     display: flex;
@@ -383,7 +473,7 @@ body>.wp-site-blocks {
 .hero-section img,
 .hero-section .wp-block-cover__image-background {
     width: 100%;
-    height: 50vh !important;
+    height: 55vh !important;
     object-fit: cover;
     position: absolute !important;
     top: 0 !important;
@@ -609,7 +699,7 @@ body {
     /* ═══ VARIABLES CONFIGURABLES DESDE WORDPRESS ═══ */
 
     /* Márgenes laterales para diferentes tamaños de pantalla */
-    --mobile-page-margin: 16px;
+    --mobile-page-margin: 24px;
     /* Reduced for balanced look */
     /* Móviles pequeños (< 480px) */
     --mobile-medium-margin: 20px;
@@ -637,7 +727,157 @@ body {
 
 @media only screen and (max-width: 479px) {
 
-    /* ─── Tipografía Optimizada ─── */
+    /* ─── Layout Reset (Fix for "Wider on Right") ─── */
+    html,
+    body {
+        overflow-x: hidden !important;
+        width: 100% !important;
+        max-width: 100vw !important;
+        margin: 0 !important;
+        padding: 0 !important;
+
+    }
+
+    /* Force Main Containers to be Full Width */
+    .wp-site-blocks,
+    main,
+    header,
+    footer,
+    .entry-content {
+        width: 100% !important;
+        max-width: 100vw !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    /* ─── Symmetric Content Padding ─── */
+    /* Apply 16px padding to all standard content blocks */
+    main>*,
+    .entry-content>* {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding-left: var(--mobile-page-margin) !important;
+        padding-right: var(--mobile-page-margin) !important;
+        box-sizing: border-box !important;
+    }
+
+    /* ─── Full Width Exceptions ─── */
+    /* Hero, Covers, and Full-Width Groups should NOT have side padding */
+    main>.hero-section,
+    main>.wp-block-cover,
+    main>.alignfull,
+    main>.has-violeta-polvo-background-color,
+    .entry-content>.hero-section,
+    .entry-content>.wp-block-cover,
+    .entry-content>.alignfull {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    /* ─── CRITICAL: Text Safety for Full Width Blocks (Home Only) ─── */
+    .home .alignfull p,
+    .home .alignfull h1,
+    .home .alignfull h2,
+    .home .alignfull h3,
+    .home .alignfull h4,
+    .home .alignfull h5,
+    .home .alignfull h6,
+    .home .alignfull ul,
+    .home .alignfull ol,
+    .home .alignfull dl,
+    .home .alignfull blockquote,
+    .home .wp-block-cover p,
+    .home .wp-block-cover h1,
+    .home .wp-block-cover h2,
+    .home .wp-block-cover h3,
+    .home .hero-section p,
+    .home .hero-section h1,
+    .home .hero-section h2,
+    .home .hero-section h3 {
+        padding-left: var(--mobile-page-margin) !important;
+        padding-right: var(--mobile-page-margin) !important;
+        box-sizing: border-box !important;
+        max-width: 100% !important;
+    }
+
+    /* ─── Hero Section Fixes ─── */
+    .hero-section,
+    .hero-section img,
+    .hero-section .wp-block-cover__image-background {
+        width: 100% !important;
+        max-width: 100vw !important;
+        left: 0 !important;
+        right: 0 !important;
+        text-align: center !important;
+    }
+
+    /* Force Center Alignment for Hero Text on Mobile */
+    .home .hero-section .wp-block-cover__inner-container,
+    .home .hero-section p,
+    .home .hero-section h1,
+    .home .hero-section h2 {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    /* Prevent Hero Content from touching edges if full width */
+    .hero-section .wp-block-cover__inner-container,
+    .hero-section .wp-block-group__inner-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        /* Ensure it stays within parent */
+        padding-left: 24px !important;
+        padding-right: 24px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* ─── Profile Circle ─── */
+    .profile-circle-container {
+        margin-top: -90px !important;
+        width: 100% !important;
+        /* Ensure container is full width to allow centering */
+        display: flex !important;
+        justify-content: center !important;
+    }
+
+    .profile-circle-container img {
+        width: 180px !important;
+        height: 180px !important;
+        margin: 0 auto !important;
+        /* Explicit centering */
+    }
+
+    /* ─── Header Mobile Fix ─── */
+    .has-violeta-polvo-background-color {
+        padding: 12px 16px !important;
+        min-height: 56px !important;
+    }
+
+    .header-section-left,
+    .header-section-right {
+        flex: 0 0 auto !important;
+        min-width: 44px !important;
+    }
+
+    .header-section-center {
+        flex: 1 !important;
+    }
+
+    /* Cart positioning */
+    .wc-block-mini-cart {
+        position: relative !important;
+        right: auto !important;
+        top: auto !important;
+        transform: none !important;
+    }
+
+    /* Typography */
     body {
         font-size: var(--mobile-base-font) !important;
         line-height: 1.6 !important;
@@ -649,7 +889,6 @@ body {
 
     h2 {
         font-size: clamp(1.625rem, 4.5vw, 2.125rem) !important;
-        /* +2 puntos: 1.5rem → 1.625rem, 2rem → 2.125rem */
     }
 
     h3 {
@@ -665,39 +904,7 @@ body {
         font-size: clamp(1rem, 3vw, 1.25rem) !important;
     }
 
-    /* ─── Márgenes Laterales ─── */
-    main>*:not(.hero-section):not(.wp-block-cover):not(.alignfull):not(.has-violeta-polvo-background-color),
-    .entry-content>*:not(.hero-section):not(.wp-block-cover):not(.alignfull) {
-        padding-left: var(--mobile-page-margin) !important;
-        padding-right: var(--mobile-page-margin) !important;
-        box-sizing: border-box !important;
-    }
-
-    /* ─── Contenido en Grupos Full Width ─── */
-    .wp-block-group.alignfull:not(.hero-section):not(.wp-block-cover)>*:not(.alignfull),
-    .wp-block-group.alignwide:not(.hero-section):not(.wp-block-cover)>*:not(.alignfull) {
-        padding-left: var(--mobile-page-margin) !important;
-        padding-right: var(--mobile-page-margin) !important;
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-        width: auto !important;
-        box-sizing: border-box !important;
-    }
-
-    /* ─── Red de Seguridad para Textos ─── */
-    /* NOTA: Se removieron las reglas de max-width que causaban alineación a la izquierda.
-       El padding en los contenedores padres ya maneja el espaciado correctamente. */
-
-    /* ─── Espaciado Vertical Optimizado ─── */
-    main>*+* {
-        margin-top: var(--mobile-section-spacing) !important;
-    }
-
-    .wp-block-paragraph+.wp-block-paragraph {
-        margin-top: 1.25em !important;
-    }
-
-    /* ─── Elementos Táctiles (Touch Targets) ─── */
+    /* Touch Targets */
     button,
     .wp-block-button__link,
     a.wp-element-button,
@@ -709,72 +916,11 @@ body {
         justify-content: center !important;
     }
 
-    /* HAMBURGER MENU - Override touch target padding */
     .wp-block-navigation__responsive-container-open {
         min-height: 40px !important;
-        max-height: 40px !important;
         width: 40px !important;
         padding: 0 !important;
         margin: 0 !important;
-    }
-
-    /* ─── Imágenes Responsivas ─── */
-    img:not(.profile-circle-container img) {
-        max-width: 100% !important;
-        height: auto !important;
-    }
-
-    /* ─── Tablas Responsivas ─── */
-    table {
-        display: block !important;
-        overflow-x: auto !important;
-        -webkit-overflow-scrolling: touch !important;
-    }
-
-    /* ─── Hero Section Ajustado ─── */
-    .hero-section {
-        min-height: 60vh !important;
-    }
-
-    .hero-section img {
-        height: 60vh !important;
-    }
-
-    /* ─── Profile Circle Ajustado ─── */
-    .profile-circle-container img {
-        width: 180px !important;
-        height: 180px !important;
-    }
-
-    .profile-circle-container {
-        margin-top: -90px !important;
-    }
-
-    /* ─── HEADER MOBILE FIX ─── */
-    .has-violeta-polvo-background-color {
-        padding: 12px 16px !important;
-        /* Symmetric smaller padding on mobile */
-        min-height: 56px !important;
-    }
-
-    .header-section-left,
-    .header-section-right {
-        flex: 0 0 auto !important;
-        /* Don't grow, natural width */
-        min-width: 44px !important;
-        /* Touch target minimum */
-    }
-
-    .header-section-center {
-        flex: 1 !important;
-    }
-
-    /* Cart positioning on mobile */
-    .wc-block-mini-cart {
-        position: relative !important;
-        right: auto !important;
-        top: auto !important;
-        transform: none !important;
     }
 }
 
@@ -784,38 +930,68 @@ body {
 
 @media only screen and (min-width: 480px) and (max-width: 767px) {
 
-    /* ─── Tipografía ─── */
-    body {
-        font-size: calc(var(--mobile-base-font) + 1px) !important;
-    }
+    /* Reuse reset logic from above via cascading or implicit structural fixes */
 
-    /* ─── Márgenes Laterales ─── */
-    main>*:not(.hero-section):not(.wp-block-cover):not(.alignfull):not(.has-violeta-polvo-background-color),
-    .entry-content>*:not(.hero-section):not(.wp-block-cover):not(.alignfull) {
+    /* ─── Symmetric Content Padding ─── */
+    main>*,
+    .entry-content>* {
         padding-left: var(--mobile-medium-margin) !important;
         padding-right: var(--mobile-medium-margin) !important;
-        box-sizing: border-box !important;
-    }
-
-    .wp-block-group.alignfull:not(.hero-section):not(.wp-block-cover)>*:not(.alignfull),
-    .wp-block-group.alignwide:not(.hero-section):not(.wp-block-cover)>*:not(.alignfull) {
-        padding-left: var(--mobile-medium-margin) !important;
-        padding-right: var(--mobile-medium-margin) !important;
+        width: 100% !important;
         margin-left: 0 !important;
         margin-right: 0 !important;
-        box-sizing: border-box !important;
     }
 
+    /* Reset exceptions again to be safe */
+    main>.hero-section,
+    main>.wp-block-cover,
+    main>.alignfull,
+    main>.has-violeta-polvo-background-color,
+    .entry-content>.hero-section,
+    .entry-content>.wp-block-cover,
+    .entry-content>.alignfull {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
 
+    /* Text Safety for Full Width Blocks (Home Only - Medium Mobile) */
+    .home .alignfull p,
+    .home .alignfull h1,
+    .home .alignfull h2,
+    .home .alignfull h3,
+    .home .alignfull h4,
+    .home .alignfull h5,
+    .home .alignfull h6,
+    .home .alignfull ul,
+    .home .alignfull ol,
+    .home .alignfull dl,
+    .home .alignfull blockquote,
+    .home .wp-block-cover p,
+    .home .wp-block-cover h1,
+    .home .wp-block-cover h2,
+    .home .wp-block-cover h3,
+    .home .hero-section p,
+    .home .hero-section h1,
+    .home .hero-section h2,
+    .home .hero-section h3 {
+        padding-left: var(--mobile-medium-margin) !important;
+        padding-right: var(--mobile-medium-margin) !important;
+        box-sizing: border-box !important;
+        max-width: 100% !important;
+    }
 
-    /* ─── Profile Circle ─── */
+    /* Profile Circle */
+    .profile-circle-container {
+        margin-top: -110px !important;
+    }
+
     .profile-circle-container img {
         width: 220px !important;
         height: 220px !important;
     }
 
-    .profile-circle-container {
-        margin-top: -110px !important;
+    body {
+        font-size: calc(var(--mobile-base-font) + 1px) !important;
     }
 }
 
@@ -830,24 +1006,92 @@ body {
         font-size: var(--tablet-base-font) !important;
     }
 
-    /* ─── Márgenes Laterales ─── */
+    /* ─── Layout Reset for Tablets ─── */
+    .wp-site-blocks,
+    main,
+    header,
+    footer,
+    .entry-content {
+        width: 100% !important;
+        max-width: 100vw !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    /* ─── Content Padding (Standard Blocks) ─── */
     main>*:not(.hero-section):not(.wp-block-cover):not(.alignfull):not(.has-violeta-polvo-background-color),
     .entry-content>*:not(.hero-section):not(.wp-block-cover):not(.alignfull) {
         padding-left: var(--tablet-page-margin) !important;
         padding-right: var(--tablet-page-margin) !important;
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    /* ─── Full Width Exceptions (Hero/Cover/Alignfull) ─── */
+    main>.hero-section,
+    main>.wp-block-cover,
+    main>.alignfull,
+    main>.has-violeta-polvo-background-color,
+    .entry-content>.hero-section,
+    .entry-content>.wp-block-cover,
+    .entry-content>.alignfull {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        max-width: 100vw !important;
+    }
+
+    /* ─── Hero Section Fixes (Tablet) ─── */
+    .hero-section,
+    .hero-section img,
+    .hero-section .wp-block-cover__image-background {
+        width: 100% !important;
+        max-width: 100vw !important;
+        left: 0 !important;
+        right: 0 !important;
+    }
+
+    /* Prevent Hero Content from touching edges */
+    .hero-section .wp-block-cover__inner-container,
+    .hero-section .wp-block-group__inner-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding-left: 40px !important;
+        padding-right: 40px !important;
         box-sizing: border-box !important;
     }
 
-    .wp-block-group.alignfull:not(.hero-section):not(.wp-block-cover)>*:not(.alignfull),
-    .wp-block-group.alignwide:not(.hero-section):not(.wp-block-cover)>*:not(.alignfull) {
-        margin-left: var(--tablet-page-margin) !important;
-        margin-right: var(--tablet-page-margin) !important;
-        /* Reset full‑width grupos en tablets */
+    /* ─── Text Safety for Full Width Blocks (Home Only - Tablet) ─── */
+    .home .alignfull p,
+    .home .alignfull h1,
+    .home .alignfull h2,
+    .home .alignfull h3,
+    .home .alignfull h4,
+    .home .alignfull h5,
+    .home .alignfull h6,
+    .home .alignfull ul,
+    .home .alignfull ol,
+    .home .alignfull dl,
+    .home .alignfull blockquote,
+    .home .wp-block-cover p,
+    .home .wp-block-cover h1,
+    .home .wp-block-cover h2,
+    .home .wp-block-cover h3,
+    .home .hero-section p,
+    .home .hero-section h1,
+    .home .hero-section h2,
+    .home .hero-section h3 {
+        padding-left: var(--tablet-page-margin) !important;
+        padding-right: var(--tablet-page-margin) !important;
+        box-sizing: border-box !important;
         max-width: 100% !important;
     }
-
-
-
 
     /* ─── Espaciado Vertical ─── */
     main>*+* {
@@ -883,9 +1127,14 @@ body {
 
     /* ─── Mejorar Legibilidad ─── */
     p {
-        text-align: left !important;
+        text-align: left;
         hyphens: auto !important;
         word-wrap: break-word !important;
+    }
+
+    /* Allow centering to work */
+    .has-text-align-center {
+        text-align: center !important;
     }
 
     /* ─── Optimizar Listas ─── */
@@ -992,23 +1241,108 @@ body {
    12. EFECTOS ESPECIALES (Gallery, Animations)
    ═══════════════════════════════════════════════════════════════════════════ */
 
-/* ARTISTIC TATTOOS GALLERY
-   Class: .bw-gallery or applied to global gallery if desired.
-   Effect: Grayscale thumbnails, color on hover.
-*/
-
-.wp-block-gallery figure img,
-.wp-block-image.bw-effect img {
+/* ARTISTIC TATTOOS CHILD PAGES EFFECT - Scoped to children of ID 94 */
+.child-of-artistic-tattoos .wp-block-gallery figure img,
+.child-of-artistic-tattoos .wp-block-image.bw-effect img {
     filter: grayscale(100%);
     transition: filter 0.4s ease, transform 0.4s ease;
     transform: scale(1);
-    cursor: pointer;
+    /* Remove explicit cursor to allow default behavior (link/button) */
 }
 
-.wp-block-gallery figure img:hover,
-.wp-block-image.bw-effect img:hover {
-    filter: grayscale(0%);
-    transform: scale(1.02);
+/* Apply hover effects ONLY on devices that support hover (Desktops) */
+@media (hover: hover) {
+
+    .child-of-artistic-tattoos .wp-block-gallery figure img:hover,
+    .child-of-artistic-tattoos .wp-block-image.bw-effect img:hover {
+        filter: grayscale(0%);
+        transform: scale(1.02);
+    }
+}
+
+/* 
+   FIX FOR 'VIOLET SQUARE' ARTIFACT & MOBILE DOUBLE-TAP
+   ----------------------------------------------------
+   1. Removes theme-forced button styles (Violet background, borders) from Lightbox triggers.
+   2. Removes mobile tap highlight color (often appears as a colored box on tap).
+   3. Ensures pseudo-elements (::before/::after) don't create artifacts.
+   4. Targets Page 94 specifically as requested, plus global fallbacks.
+*/
+
+/* Global Safety Fix for Lightbox Buttons */
+.wp-block-gallery figure button,
+.wp-block-gallery figure a,
+.wp-block-image button,
+.wp-block-image a,
+.wp-lightbox-overlay button {
+    background-color: transparent !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+    /* Removes mobile tap color */
+    cursor: pointer !important;
+    /* Ensure it stays clickable */
+}
+
+/* Specific Target for Page 94 (Artistic Tattoos) to ensure override */
+.page-id-94 .wp-block-gallery figure button,
+.page-id-94 .wp-block-image button,
+.page-id-94 .wp-lightbox-overlay button {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+    cursor: pointer !important;
+}
+
+/* Aggressive Fix: Remove background from SVG icons inside the button */
+.page-id-94 .wp-block-gallery figure button svg,
+.page-id-94 .wp-block-image button svg,
+.wp-block-gallery figure button svg,
+.wp-block-image button svg {
+    background: transparent !important;
+    fill: transparent !important;
+    /* Sometimes fill is the issue, usually stroke is visible */
+}
+
+/* Ensure the icon itself is still visible if it's stroke-based, but remove background fills */
+.page-id-94 .wp-block-gallery figure button svg path,
+.wp-block-gallery figure button svg path {
+    fill: currentColor;
+    /* Restore icon visibility if needed */
+}
+
+/* Ensure Button Pseudo-elements don't carry the "Square" style */
+.wp-block-gallery figure button::before,
+.wp-block-gallery figure button::after,
+.wp-block-image button::before,
+.wp-block-image button::after {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    display: none !important;
+    /* Hide pseudo-elements completely to prevent squares */
+    content: none !important;
+}
+
+/* Handle Focus/Hover States to prevent "stuck" colors on mobile */
+.wp-block-gallery figure button:focus,
+.wp-block-gallery figure a:focus,
+.wp-block-image button:focus,
+.wp-block-image a:focus,
+.wp-lightbox-overlay button:focus,
+.wp-block-gallery figure button:hover,
+.wp-block-gallery figure a:hover,
+.wp-block-image button:hover,
+.wp-block-image a:hover,
+.wp-block-gallery figure button:focus-visible,
+.wp-block-image button:focus-visible {
+    outline: none !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
 }
 
 /* Lightbox support (Generic WP Lightbox) */
@@ -1352,3 +1686,150 @@ body {
 
 /* Import Font */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   RESPONSIVE HEADER - SPLIT MOBILE/DESKTOP
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Default: Mobile Layout Visible, Desktop Hidden */
+.mobile-header-content {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}
+
+.desktop-header-content {
+    display: none !important;
+}
+
+/* Desktop Breakpoint */
+@media (min-width: 1024px) {
+    .mobile-header-content {
+        display: none !important;
+    }
+
+    .desktop-header-content {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+        padding-top: 10px !important;
+        padding-bottom: 20px !important;
+        position: relative !important;
+    }
+
+    /* Desktop Cart Positioning */
+    .desktop-header-content .wc-block-mini-cart {
+        position: absolute !important;
+        right: 40px !important;
+        top: 20px !important;
+        margin: 0 !important;
+        z-index: 100 !important;
+    }
+
+
+    /* Override parent strict flex row constraints if necessary */
+    .custom-header-bar {
+        padding: 0 !important;
+        height: auto !important;
+        min-height: auto !important;
+        display: block !important;
+        /* Allow block flow for column content */
+    }
+
+    /* Ensure the background color container allows content flow */
+    .has-violeta-polvo-background-color {
+        height: auto !important;
+        min-height: auto !important;
+        display: block !important;
+    }
+
+    /* Desktop Navigation Styling */
+    .desktop-nav-menu {
+        width: 100% !important;
+        justify-content: center !important;
+        margin-top: 15px !important;
+        gap: 30px !important;
+    }
+
+    .desktop-nav-menu .wp-block-navigation-item a {
+        font-size: 1rem !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.1em !important;
+        font-weight: 500 !important;
+        color: var(--wp--preset--color--grafito) !important;
+        text-decoration: none !important;
+    }
+
+    .desktop-nav-menu .wp-block-navigation-item a:hover {
+        text-decoration: underline !important;
+        opacity: 0.8;
+    }
+
+    /* Desktop Site Title */
+    .desktop-site-title a {
+        font-family: 'Cronde', serif !important;
+        font-size: 2.5rem !important;
+        color: var(--wp--preset--color--grafito) !important;
+        text-decoration: none !important;
+        letter-spacing: 0.1em !important;
+    }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   VISIBILITY UTILITIES (.movil / .desktop)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* .desktop: Visible on Tablet (Medium) and Desktop. Hidden on Mobile. */
+@media only screen and (max-width: 767px) {
+    .desktop {
+        display: none !important;
+    }
+}
+
+/* .movil: Visible on Mobile. Hidden on Tablet (Medium) and Desktop. */
+@media only screen and (min-width: 768px) {
+    .movil {
+        display: none !important;
+    }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   IMAGE PROTECTION
+   ═══════════════════════════════════════════════════════════════════════════ */
+img {
+    /* Disables right-click menu on the image itself */
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    user-drag: none;
+}
+
+
+.lightbox-trigger {
+    display: none !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ARTISTIC TATTOO (Post 94) - GRAYSCALE & LIGHTBOX
+   ═══════════════════════════════════════════════════════════════════════════ */
+/* Start with Grayscale for images on page 94 */
+.page-id-94 .wp-block-image img,
+.postid-94 .wp-block-image img {
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+/* Restore color when using the Lightbox */
+.page-id-94 .wp-lightbox-overlay img,
+.postid-94 .wp-lightbox-overlay img {
+    filter: grayscale(0%) !important;
+}

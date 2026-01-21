@@ -51,7 +51,6 @@ Pedir al agente cuando necesites:
 
 | Archivo | Propósito |
 |---------|-----------|
-| `DOCS/DECISION-TREE.md` | 🌳 ¿Dónde cambio X? |
 | `DOCS/03-WORDPRESS-GUIDE.md` | 📖 Guía paso a paso |
 | `DOCS/TIPOGRAFIAS-GUIA.md` | ✏️ Referencia tipografías |
 | `DOCS/00-Domain-memory.md` | 🧠 Memoria del proyecto |
@@ -84,7 +83,7 @@ Pedir al agente cuando necesites:
 - Revisar `DOCS/00-Domain-memory.md`
 
 ### Después de terminar:
-- Actualizar `DOCS/00-Domain-memory.md` con aprendizajes
+- Actualizar `DOCS/00-Domain-memory.md` con aprendizajes que sirvan para trabajar más fluidamente en el futuro
 - Marcar tareas completadas en `DOCS/01-TODOS.xml`
 
 ---

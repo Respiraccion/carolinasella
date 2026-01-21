@@ -1,6 +1,110 @@
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50"}}},"backgroundColor":"base","layout":{"type":"constrained"}} -->
 <div class="wp-block-group has-base-background-color has-background"
-    style="padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50)">
+    style="padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50);position:relative">
+
+    <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|30","margin":{"bottom":"var:preset|spacing|50"}}},"layout":{"type":"constrained"}} -->
+    <div class="wp-block-group" style="margin-bottom:var(--wp--preset--spacing--50)">
+
+        <!-- wp:html -->
+        <div class="newsletter-box">
+            <style>
+                .newsletter-box {
+                    border: 1px solid rgba(0, 0, 0, 0.1);
+                    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+                    padding: 2.5rem 2rem;
+                    max-width: 650px;
+                    margin: 0 auto;
+                    background: transparent;
+                }
+
+                @media (max-width: 600px) {
+                    .newsletter-box {
+                        padding: 1.5rem 1rem;
+                        margin: 0 1rem;
+                    }
+                }
+
+                .newsletter-box h2 {
+                    text-align: center;
+                    font-style: normal;
+                    font-weight: 300;
+                    font-size: 2rem;
+                    margin: 0 0 0.5rem 0;
+                }
+
+                .newsletter-box .newsletter-description {
+                    text-align: center;
+                    margin: 0 auto var(--wp--preset--spacing--40) auto;
+                    max-width: 500px;
+                }
+
+                .newsletter-wrapper {
+                    display: flex;
+                    justify-content: center;
+                    width: 100%;
+                }
+
+                .newsletter-form {
+                    display: flex;
+                    gap: 10px;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    width: 100%;
+                    max-width: 500px;
+                }
+
+                .newsletter-form input[type="email"] {
+                    border: 1px solid var(--wp--preset--color--grafito);
+                    background: transparent;
+                    padding: 12px 16px;
+                    font-family: var(--wp--preset--font-family--lato);
+                    color: var(--wp--preset--color--grafito);
+                    flex-grow: 1;
+                    min-width: 200px;
+                }
+
+                .newsletter-form input[type="email"]::placeholder {
+                    color: var(--wp--preset--color--grafito);
+                    opacity: 0.6;
+                    text-transform: uppercase;
+                    font-size: 0.8rem;
+                    letter-spacing: 0.1em;
+                }
+
+                .newsletter-form button {
+                    background-color: var(--wp--preset--color--grafito);
+                    color: var(--wp--preset--color--gris-muy-claro);
+                    border: none;
+                    padding: 12px 24px;
+                    font-family: var(--wp--preset--font-family--lato);
+                    font-size: 0.85rem;
+                    letter-spacing: 0.15em;
+                    text-transform: uppercase;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                }
+
+                .newsletter-form button:hover {
+                    background-color: var(--wp--preset--color--violeta-polvo);
+                    color: white;
+                }
+            </style>
+
+            <h2>A space for slow thoughts</h2>
+            <p class="newsletter-description">Once a month, I share a letter with my latest works, quiet reflections
+                from my studio in Copenhagen and first news on original releases. I'd love to have you there!</p>
+
+            <div class="newsletter-wrapper">
+                <form class="newsletter-form" onsubmit="event.preventDefault();">
+                    <input type="email" placeholder="Email Address" required>
+                    <button type="submit">KEEP IN TOUCH!</button>
+                </form>
+            </div>
+        </div>
+        <!-- /wp:html -->
+
+    </div>
+    <!-- /wp:group -->
     <!-- wp:group {"align":"wide","style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"center"}} -->
     <div class="wp-block-group alignwide">
         <!-- wp:paragraph {"fontSize":"small","style":{"elements":{"link":{"color":{"text":"var:preset|color|azul-humo"}}}}} -->
@@ -12,15 +116,33 @@
         <!-- /wp:paragraph -->
 
         <!-- wp:paragraph {"fontSize":"small","style":{"elements":{"link":{"color":{"text":"var:preset|color|azul-humo"}}}}} -->
-        <p class="has-small-font-size"><a href="https://instagram.com/carolina.sella" target="_blank"
+        <p class="has-small-font-size"><a href="https://instagram.com/nebula.ttt" target="_blank"
                 rel="noopener">Instagram</a></p>
+        <!-- /wp:paragraph -->
+
+        <!-- wp:paragraph {"fontSize":"small"} -->
+        <p class="has-small-font-size">·</p>
+        <!-- /wp:paragraph -->
+
+        <!-- wp:paragraph {"fontSize":"small","style":{"elements":{"link":{"color":{"text":"var:preset|color|azul-humo"}}}}} -->
+        <p class="has-small-font-size"><a href="/terms-and-conditions/">Terms &amp; Conditions</a></p>
+        <!-- /wp:paragraph -->
+
+        <!-- wp:paragraph {"fontSize":"small"} -->
+        <p class="has-small-font-size">·</p>
+        <!-- /wp:paragraph -->
+
+        <!-- wp:paragraph {"fontSize":"small","style":{"elements":{"link":{"color":{"text":"var:preset|color|azul-humo"}}}}} -->
+        <p class="has-small-font-size"><a href="/privacy-policy/">Privacy Policy</a></p>
         <!-- /wp:paragraph -->
     </div>
     <!-- /wp:group -->
 
     <!-- wp:paragraph {"align":"center","fontSize":"small","style":{"spacing":{"margin":{"top":"var:preset|spacing|30"}}}} -->
-    <p class="has-text-align-center has-small-font-size" style="margin-top:var(--wp--preset--spacing--30)">© 2025
+    <p class="has-text-align-center has-small-font-size" style="margin-top:var(--wp--preset--spacing--30)">© 2026
         Carolina Sella</p>
     <!-- /wp:paragraph -->
+    <img src="/wp-content/themes/twentytwentyfive-child/parts/Ganesha-footer.png" alt=""
+        style="position: absolute; right: 20px; bottom: 20px; width: 40px; height: 40px: auto; opacity: 0.15; pointer-events: none;">
 </div>
 <!-- /wp:group -->

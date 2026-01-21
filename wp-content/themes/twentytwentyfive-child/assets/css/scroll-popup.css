@@ -1,0 +1,64 @@
+/* Scroll Popup Notification Styles */
+#scroll-popup-notification {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* Start slightly scaled down, translated to center */
+    transform: translate(-50%, -50%) scale(0.9);
+    background-color: var(--wp--preset--color--violeta-polvo, #72677C);
+    color: #ffffff;
+    border: 1px solid var(--wp--preset--color--violeta-polvo, #72677C);
+    padding: 24px 40px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 0.95rem;
+    /* Slightly larger for impact */
+    font-weight: 500;
+    z-index: 9999;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    pointer-events: none;
+    /* Just a notification */
+    border-radius: 0;
+    text-align: center;
+
+    /* Controlling width and lines */
+    width: auto;
+    max-width: 320px;
+    /* Restrict width to force wrapping */
+    line-height: 1.6;
+
+    backdrop-filter: blur(5px);
+}
+
+#scroll-popup-notification.visible {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    animation: softPulse 2s infinite;
+}
+
+/* Add a subtle pulse animation for extra "nice fx" */
+@keyframes softPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(114, 103, 124, 0.4);
+    }
+
+    70% {
+        box-shadow: 0 0 0 15px rgba(114, 103, 124, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(114, 103, 124, 0);
+    }
+}
+
+/* Mobile specific adjustments */
+@media (max-width: 600px) {
+    #scroll-popup-notification {
+        padding: 20px 30px;
+        font-size: 0.85rem;
+        max-width: 260px;
+        /* Tighter on mobiile */
+    }
+}

@@ -1,14 +1,14 @@
 <todos>
     <!-- 1. HOME & LAYOUT -->
-    <task id="5" priority="high" status="pending">
+    <task id="5" priority="high" status="completed">
         <title>Home Hero Redesign</title>
         <description>Adjust Hero section: reduces height/space. Layout: Text Phrase on top, Photo below (stacked). Ensure it doesn't take up too much vertical space.</description>
     </task>
-    <task id="6" priority="high" status="pending">
+    <task id="6" priority="high" status="completed">
         <title>Header Cart Position</title>
         <description>Ensure the Shopping Cart icon/link is positioned on the far right of the header.</description>
     </task>
-    <task id="7" priority="high" status="pending">
+    <task id="7" priority="high" status="completed">
         <title>Global Typography &amp; Margins</title>
         <description>
             1. Increase side margins (give "air" to content).
@@ -18,15 +18,15 @@
     </task>
 
     <!-- 2. DESIGN & EFFECTS -->
-    <task id="8" priority="medium" status="pending">
+    <task id="8" priority="medium" status="completed">
         <title>B&amp;W to Color Gallery Effect</title>
         <description>Implement CSS/JS for "Artistic Tattoos": Gallery thumbnails in B&amp;W, full color on click/lightbox.</description>
     </task>
-    <task id="9" priority="medium" status="pending">
+    <task id="9" priority="medium" status="completed">
         <title>Blog Archive Styling</title>
         <description>Redesign Blog list: Small image (left/right), Title, short excerpt (1-2 lines). Link to Newsletter. Reference: Brug app.png style.</description>
     </task>
-    <task id="10" priority="low" status="pending">
+    <task id="10" priority="low" status="completed">
         <title>Header Title Spacing</title>
         <description>Ensure clear separation between the two main header items if they are close, and check title sizing.</description>
     </task>

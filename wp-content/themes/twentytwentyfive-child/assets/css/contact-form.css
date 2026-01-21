@@ -1,0 +1,478 @@
+/**
+ * Carolina Sella - Contact Form Styles
+ * Premium, modern design with subtle animations
+ */
+
+/* ========================================
+   FORM WRAPPER
+======================================== */
+.carolina-contact-form-wrapper {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.carolina-contact-form {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(248, 245, 242, 0.95));
+    border-radius: 16px;
+    padding: 2.5rem;
+    box-shadow:
+        0 4px 6px -1px rgba(0, 0, 0, 0.05),
+        0 10px 15px -3px rgba(0, 0, 0, 0.08),
+        0 20px 25px -5px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle decorative gradient on top */
+.carolina-contact-form::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg,
+            #a8907a 0%,
+            #c9b8a8 25%,
+            #8b7355 50%,
+            #c9b8a8 75%,
+            #a8907a 100%);
+    background-size: 200% 100%;
+    animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+/* ========================================
+   FORM GROUPS & LABELS
+======================================== */
+.carolina-contact-form .form-group {
+    margin-bottom: 1.75rem;
+}
+
+.carolina-contact-form label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #3d3d3d;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.02em;
+}
+
+.carolina-contact-form .required {
+    color: #c45c4a;
+    font-weight: 700;
+}
+
+/* ========================================
+   INPUTS, SELECTS, TEXTAREAS
+======================================== */
+.carolina-contact-form input[type="text"],
+.carolina-contact-form input[type="email"],
+.carolina-contact-form select,
+.carolina-contact-form textarea {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    font-size: 1rem;
+    font-family: inherit;
+    color: #333;
+    background-color: #fff;
+    border: 1.5px solid #d8d2cb;
+    border-radius: 8px;
+    transition: all 0.25s ease;
+    box-sizing: border-box;
+}
+
+.carolina-contact-form input[type="text"]:hover,
+.carolina-contact-form input[type="email"]:hover,
+.carolina-contact-form select:hover,
+.carolina-contact-form textarea:hover {
+    border-color: #b8a898;
+}
+
+.carolina-contact-form input[type="text"]:focus,
+.carolina-contact-form input[type="email"]:focus,
+.carolina-contact-form select:focus,
+.carolina-contact-form textarea:focus {
+    outline: none;
+    border-color: #8b7355;
+    box-shadow: 0 0 0 3px rgba(139, 115, 85, 0.15);
+}
+
+/* Error state */
+.carolina-contact-form input.error,
+.carolina-contact-form textarea.error,
+.carolina-contact-form select.error {
+    border-color: #c45c4a;
+    background-color: #fcf5f4;
+}
+
+.carolina-contact-form input.error:focus,
+.carolina-contact-form textarea.error:focus {
+    box-shadow: 0 0 0 3px rgba(196, 92, 74, 0.15);
+}
+
+/* Textarea */
+.carolina-contact-form textarea {
+    resize: vertical;
+    min-height: 140px;
+    line-height: 1.5;
+}
+
+/* Select */
+.carolina-contact-form select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23666' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.5rem;
+    cursor: pointer;
+}
+
+/* ========================================
+   FILE UPLOAD
+======================================== */
+.file-upload-wrapper {
+    position: relative;
+}
+
+.carolina-contact-form input[type="file"] {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+    color: #555;
+    background-color: #fafaf8;
+    border: 1.5px dashed #c9c0b5;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.carolina-contact-form input[type="file"]:hover {
+    border-color: #a8907a;
+    background-color: #f5f3f0;
+}
+
+.carolina-contact-form input[type="file"]::file-selector-button {
+    padding: 0.5rem 1rem;
+    margin-right: 1rem;
+    background-color: var(--wp--preset--color--violeta-polvo);
+    color: #ffffff;
+    border: 1px solid var(--wp--preset--color--violeta-polvo);
+    border-radius: 0;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.carolina-contact-form input[type="file"]::file-selector-button:hover {
+    color: var(--wp--preset--color--grafito);
+    background-color: var(--wp--preset--color--violeta-polvo);
+}
+
+.file-upload-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.file-name {
+    font-size: 0.85rem;
+    color: #666;
+    flex: 1;
+}
+
+.file-clear-btn {
+    width: 22px;
+    height: 22px;
+    padding: 0;
+    background: #e5e0da;
+    border: none;
+    border-radius: 50%;
+    color: #666;
+    font-size: 1rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.file-clear-btn:hover {
+    background: #c45c4a;
+    color: #fff;
+}
+
+.file-help {
+    font-size: 0.8rem;
+    color: #888;
+    margin-top: 0.35rem;
+}
+
+/* Image Preview */
+.image-preview {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    background: #f8f7f5;
+    border-radius: 8px;
+    border: 1px solid #e5e0da;
+}
+
+.image-preview img {
+    max-width: 100%;
+    max-height: 200px;
+    border-radius: 6px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* ========================================
+   HONEYPOT (HIDDEN)
+======================================== */
+.hp-field {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 0;
+    width: 0;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+/* ========================================
+   RECAPTCHA NOTICE
+======================================== */
+.recaptcha-notice {
+    margin-bottom: 1.5rem;
+    padding: 0.75rem 1rem;
+    background: rgba(139, 115, 85, 0.06);
+    border-radius: 6px;
+    border-left: 3px solid #a8907a;
+}
+
+.recaptcha-notice small {
+    font-size: 0.78rem;
+    color: #6a6a6a;
+    line-height: 1.5;
+}
+
+.recaptcha-notice a {
+    color: #8b7355;
+    text-decoration: underline;
+}
+
+.recaptcha-notice a:hover {
+    color: #6a5740;
+}
+
+/* ========================================
+   SUBMIT BUTTON
+======================================== */
+.form-submit {
+    margin-top: 2rem;
+}
+
+.submit-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-width: 180px;
+    padding: 12px 32px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #ffffff;
+    background-color: var(--wp--preset--color--violeta-polvo);
+    border: 1px solid var(--wp--preset--color--violeta-polvo);
+    border-radius: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.submit-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.submit-btn:hover:not(:disabled) {
+    color: var(--wp--preset--color--grafito);
+    background-color: var(--wp--preset--color--violeta-polvo);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.submit-btn:hover:not(:disabled)::before {
+    left: 100%;
+}
+
+.submit-btn:active:not(:disabled) {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+.submit-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    background-color: #ccc;
+    border-color: #ccc;
+}
+
+/* Loading spinner */
+.btn-loading {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.spinner {
+    width: 18px;
+    height: 18px;
+    animation: rotate 1s linear infinite;
+}
+
+.spinner circle {
+    stroke: #fff;
+    stroke-linecap: round;
+    animation: dash 1.5s ease-in-out infinite;
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes dash {
+    0% {
+        stroke-dasharray: 1, 150;
+        stroke-dashoffset: 0;
+    }
+
+    50% {
+        stroke-dasharray: 90, 150;
+        stroke-dashoffset: -35;
+    }
+
+    100% {
+        stroke-dasharray: 90, 150;
+        stroke-dashoffset: -124;
+    }
+}
+
+/* ========================================
+   MESSAGES
+======================================== */
+.form-messages {
+    padding: 1rem 1.25rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-top: 1.5rem;
+}
+
+.form-messages.success {
+    background: linear-gradient(135deg, #e8f5e9, #f1f8e9);
+    border: 1px solid #a5d6a7;
+    color: #2e7d32;
+}
+
+.form-messages.error {
+    background: linear-gradient(135deg, #ffebee, #fce4ec);
+    border: 1px solid #ef9a9a;
+    color: #c62828;
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+@media (max-width: 640px) {
+    .carolina-contact-form {
+        padding: 1.75rem 1.25rem;
+        border-radius: 12px;
+    }
+
+    .carolina-contact-form input[type="text"],
+    .carolina-contact-form input[type="email"],
+    .carolina-contact-form select,
+    .carolina-contact-form textarea {
+        padding: 0.8rem 0.9rem;
+        font-size: 16px;
+        /* Prevents zoom on iOS */
+    }
+
+    .submit-btn {
+        width: 100%;
+        padding: 1rem;
+    }
+}
+
+/* ========================================
+   DARK MODE SUPPORT (if site uses it)
+======================================== */
+@media (prefers-color-scheme: dark) {
+    .carolina-contact-form {
+        background: linear-gradient(145deg, rgba(45, 45, 45, 0.95), rgba(35, 35, 35, 0.98));
+        border-color: rgba(255, 255, 255, 0.08);
+    }
+
+    .carolina-contact-form label {
+        color: #e0e0e0;
+    }
+
+    .carolina-contact-form input[type="text"],
+    .carolina-contact-form input[type="email"],
+    .carolina-contact-form select,
+    .carolina-contact-form textarea {
+        background-color: rgba(255, 255, 255, 0.08);
+        border-color: rgba(255, 255, 255, 0.15);
+        color: #f0f0f0;
+    }
+
+    .carolina-contact-form input[type="text"]:focus,
+    .carolina-contact-form input[type="email"]:focus,
+    .carolina-contact-form select:focus,
+    .carolina-contact-form textarea:focus {
+        border-color: #a8907a;
+        box-shadow: 0 0 0 3px rgba(168, 144, 122, 0.2);
+    }
+
+    .recaptcha-notice {
+        background: rgba(168, 144, 122, 0.1);
+    }
+
+    .recaptcha-notice small {
+        color: #aaa;
+    }
+
+    .image-preview {
+        background: rgba(255, 255, 255, 0.05);
+        border-color: rgba(255, 255, 255, 0.1);
+    }
+}
